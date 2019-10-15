@@ -65,3 +65,11 @@ competitive.
 ## Credit
 
 The project can serve as class project for this course.
+
+## Refernces
+
+Bookmanager command line tool links:
+
+* <https://pypi.org/project/cyberaide-bookmanager/>
+* <https://github.com/cyberaide/bookmanager>
+* https://github.com/cyberaide/bookmanager/blob/master/README.md>
