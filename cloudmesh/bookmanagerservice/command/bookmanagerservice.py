@@ -28,8 +28,6 @@ class BookmanagerserviceCommand(PluginCommand):
         """
         VERBOSE(arguments)
 
-        m = Manager()
-
         if arguments.start:
             print("Starts the service")
             raise NotImplementedError
