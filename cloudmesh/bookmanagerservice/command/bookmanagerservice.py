@@ -1,7 +1,6 @@
 from __future__ import print_function
 from cloudmesh.shell.command import command
 from cloudmesh.shell.command import PluginCommand
-from cloudmesh.bookmanagerservice.api.manager import Manager
 from cloudmesh.common.console import Console
 from cloudmesh.common.util import path_expand
 from pprint import pprint
@@ -16,31 +15,31 @@ class BookmanagerserviceCommand(PluginCommand):
         ::
 
           Usage:
-                bookmanagerservice --file=FILE
-                bookmanagerservice list
+                bookmanagerservice start
+                bookmanagerservice stop
+                bookmanagerservice status
 
-          This command does some useful things.
+          This command manages the bookmanager service.
 
-          Arguments:
-              FILE   a file name
 
           Options:
-              -f      specify the file
+              -h      help
 
         """
-        arguments.FILE = arguments['--file'] or None
-
         VERBOSE(arguments)
 
         m = Manager()
 
-        if arguments.FILE:
-            print("option a")
-            m.list(path_expand(arguments.FILE))
+        if arguments.start:
+            print("Starts the service")
+            raise NotImplementedError
 
-        elif arguments.list:
-            print("option b")
-            m.list("just calling list without parameter")
+        elif arguments.stop:
+            print("Stops the service")
+            raise NotImplementedError
 
-        Console.error("This is just a sample")
+        elif arguments.status:
+            print("Status of the service")
+            raise NotImplementedError
+
         return ""
