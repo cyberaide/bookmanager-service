@@ -1,0 +1,52 @@
+---
+metadata:
+  image: "cover.png"
+  title: "Cloud Computing\nEngineering"
+  subtitle: "e516"
+  author: "Gregor von Laszewski"
+  subauthor: ""
+  email: "laszewski@gmail.com"
+  url: "https://github.com/cyberaide/bookmanager"
+  description: "The lecture notes for e516"
+  abstract: "Lecture notes for e516"
+  keywords: "Cloud, Cloud Computing"
+  stylesheet: "epub.css"
+  dest: "./dest/book"
+  filename: "vonLaszewski-e516.epub"
+  rights: (c) Gregor von Laszewski, 2018, 2019
+github:
+  "chapter": "https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters"
+  "credit": "https://raw.githubusercontent.com/cyberaide/bookmanager/master/bookmanager/template"
+  "community": "https://raw.githubusercontent.com/cloudmesh-community"
+BOOK:
+  - PREFACE:
+    - "{github.chapter}/version.md"    
+    - "{github.credit}/disclaimer.md"
+  - SYLLABUS:
+    - "{github.chapter}/class/516/syllabus-2019.md"
+  - OVERVIEW:
+    - "{github.chapter}/class/516/summary.md"
+    - "{github.chapter}/class/516/communication.md"
+    - "{github.chapter}/class/516/quicktips.md"
+  - WEEKLY_AGENDA:
+    - "{github.chapter}/class/516/week1-intro.md"
+    - "{github.chapter}/class/516/week2-center.md"    
+    - "{github.chapter}/class/516/week3-arch.md"
+    - "{github.chapter}/class/516/week4-openstack.md"
+    - "{github.chapter}/class/516/week5-compute.md"
+    - "{github.chapter}/class/516/week6-REST.md"
+    - "{github.chapter}/class/516/week7-mapreduce.md"
+    - "{github.chapter}/class/516/week8-midterm.md"
+    - "{github.chapter}/class/516/week9-container.md"
+    - "{github.chapter}/class/516/weekn.md"
+  - APPENDIX:
+    - "{github.chapter}/class/516/faq.md"
+    - "{github.chapter}/preface/reader.md"
+#    - "{github.chapter}/preface/corrections.md"
+#    - "{github.chapter}/authors.md"
+#    - "{github.chapter}/preface/create.md"
+#    - "{github.chapter}/preface/notation.md"
+#    - "{github.chapter}/preface/updates.md"
+#    - "{github.chapter}/preface/emoji.md"
+  - REFERENCES:
+    - "{github.chapter}/empty.md"
