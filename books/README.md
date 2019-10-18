@@ -12,12 +12,12 @@ and then run the bookmanaegr command inside this unique directory.
 
 This way they do not interfere with each other.
 
-mkdir NEWDIR
-cp filename.yaml NEWDIR
-cd NEWDIR
-bookmanager filename.yaml get
+    mkdir NEWDIR
+    cp filename.yaml NEWDIR
+    cd NEWDIR
+    bookmanager filename.yaml get
 
-the epub witll be in NEWDIR/dest/*.epub
+the epub witll be in `NEWDIR/dest/*.epub`
 
 The filename of the epub file is specified within the yaml file
 
