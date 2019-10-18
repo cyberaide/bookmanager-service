@@ -1,0 +1,106 @@
+---
+metadata:
+  image: "cover.png"
+  title: "E534 - Big Data Applications"
+  subtitle: "Lecture Notes"
+  author: "Geoffrey C. Fox\nGregor von Laszewski"
+  subauthor: ""
+  email: "laszewski@gmail.com"
+  url: "https://cloudmesh-community.github.io/book/vonlaszewski-e534.epub"
+  description: "Proposed Lecture content (subject to change)"
+  abstract: "Proposed Lecture content (subject to change)"
+  keywords: "Cloud, virtual machines, containers, cloud engenering"
+  stylesheet: "epub.css"
+  dest: "./dest/book"
+  filename: "vonLaszewski-e534.epub"
+  rights: (c) Indiana University, Gregor von Laszewski, Geoffrey Fox, 2018, 2019
+github:
+  "community": "https://raw.githubusercontent.com/cloudmesh-community"
+  "chapter": "https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters"
+  "credit": "https://raw.githubusercontent.com/cyberaide/bookmanager/master/bookmanager/template"
+BOOK:
+  - PREFACE:
+#    - "{git.chapter}/version.md"
+    - "{github.credit}/disclaimer.md"
+  - WEEK_1:
+    - "{github.chapter}/bigdata/week1.md"
+  - WEEK_2:
+    - "{github.chapter}/bigdata/week2.md"
+  - WEEK_3:
+    - "{github.chapter}/bigdata/week3.md"
+  - WEEK_4:
+      - "{github.chapter}/bigdata/week5.md"
+  - WEEK_5:
+      - "{github.chapter}/prg/python/google-colab/python-google-colab.md"
+  - WEEK_6:
+      - "{github.chapter}/bigdata/week6.md"
+  - WEEK_7:
+      - "{github.chapter}/bigdata/week7.md"
+  - WEEK_8:
+      - "{github.chapter}/bigdata/week8.md"
+  - ASSIGNMENTS:
+      - "{github.chapter}/bigdata/assignments/index.md"
+      - WEEKLY_ASSIGNMENTS:
+        - "{github.chapter}/bigdata/assignments/assignment1.md"
+        - "{github.chapter}/bigdata/assignments/assignment2.md"
+        - "{github.chapter}/bigdata/assignments/assignment3.md"
+        - "{github.chapter}/bigdata/assignments/assignment4.md"
+        - "{github.chapter}/bigdata/assignments/assignment5.md"
+        - "{github.chapter}/bigdata/assignments/assignment6.md"
+  - GITHUB:
+      - "{github.chapter}/bigdata/github/index.md"
+#
+#    - "{github.chapter}/bigdata/week1.md"
+#    - "{github.chapter}/preface/corrections.md"
+#    - "{github.chapter}/authors.md"
+#    - "{github.chapter}/preface/create.md"
+#    - "{github.chapter}/preface/reader.md"
+#    - "{github.chapter}/preface/notation.md"
+#  - ORGANIZATION:
+#    - "{github.chapter}/class/organization-523.md"
+#    - "{github.chapter}/class/plagiarism.md"
+#    - "{github.chapter}/class/policies.md"
+#    - "{github.chapter}/class/e534-i523.md"
+#    - "{github.chapter}/class/volumes.md"
+#    - "{github.chapter}/in/datasets.md"
+#    - "{github.chapter}/class/assignments-523.md"
+#  - DETAILS:
+#    - "{github.chapter}/bigdata/intro-fall-2018.md"
+#    - "{github.chapter}/bigdata/applications/overview.md"
+#    - "{github.chapter}/bigdata/applications/physics.md"
+#    - "{github.chapter}/bigdata/applications/lifestyle.md"
+#    - "{github.chapter}/bigdata/applications/sport.md"
+#    - "{github.chapter}/bigdata/applications/cloud.md"
+#    - "{github.chapter}/bigdata/applications/usecases.md"
+#    - "{github.chapter}/bigdata/applications/sensor.md"
+#    - "{github.chapter}/bigdata/applications/radar.md"
+#    - "{github.chapter}/bigdata/applications/web.md"
+#    - "{github.chapter}/bigdata/applications/health.md"
+#  - TECHNOLOGIES:
+#    - "{github.chapter}/bigdata/applications/statistics.md"
+#    - "{github.chapter}/bigdata/applications/kmeans.md"
+#    - "{github.chapter}/bigdata/applications/plotviz.md"
+#  - DEVTOOLS:
+#    - "{github.chapter}/linux/refcards.md"
+#    - "{github.chapter}/cloud/virtualbox.md"
+#    - "{github.chapter}/cloud/vagrant.md"
+#    - "{github.chapter}/cloud/packer.md"
+#    - "{github.chapter}/os/ubuntu-usb-osx.md"
+#    - GITHUB:
+#      - "{github.chapter}/git/github.md"
+#      - "{github.chapter}/git/gitpullreqest.md"
+#      - "{github.chapter}/git/git-tools.md"
+#    - LINUX:
+#      - "{github.chapter}/linux/linux.md"
+#      - "{github.chapter}/linux/ssh.md"
+#      - "{github.chapter}/linux/ssh-futuresystems.md"
+#      - "{github.chapter}/linux/ssh-excerise.md"
+#    - PYTHON:
+#      - "{github.chapter}/bigdata/python.md"
+#  - FAQ:
+#    - "{github.chapter}/faq.md"
+#    - "{github.chapter}/faq-523.md"
+#  - GLOSSARY:
+#    - "{github.chapter}/container/glossary.md"
+  - REFERENCES:
+      - "{github.chapter}/empty.md"
