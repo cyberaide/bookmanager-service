@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    {% extends "template.html" %}
+   {% block content %}
+        <ul class="menu">
+               {% for item in data %}
+                    <li> <a href="{{ url_for('chapterSelection',  book  = item) }}">{{ item }}</a>  </li>
+                {% endfor %}
+
+        </ul>
+
+   {% endblock %}
+  </body>
+</html>
