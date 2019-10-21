@@ -6,18 +6,21 @@
   <body>
     {% extends "template.html" %}
    {% block content %}
+     <div id="plugins1">
         <ul class="menu">
         {% for item in data %}
-                    <li> {{ item }}  </li>
-            <ol>
-                {%  for j in data[item] %}
-                    <li> {{ j }} </li>
+                    <li class="jstree-open" id = {{ item }}> {{ item }}
+                        <ul>
+                            {%  for j in data[item] %}
+                                <li > {{ j }} </li>
 
-                {% endfor %}
-            </ol>
+                            {% endfor %}
+                        </ul>
+                     </li>
         {% endfor %}
         </ul>
-
+     </div>
+     <button id = "submit"> Submit </button>
    {% endblock %}
   </body>
 </html>
