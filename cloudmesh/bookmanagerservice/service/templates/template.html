@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+   <meta charset="utf-8">
+   <title>Flask Parent Template</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+
+
+
+ </head>
+ <body>
+        <header>
+          <div class="container">
+            <h1 class="logo">BookMark Manager</h1>
+          </div>
+        </header>
+
+    {% block content %}
+    {% endblock %}
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+        <script>
+      $(function () {
+
+        $("#plugins1").jstree({
+        "checkbox" : {
+          "keep_selected_style" : false,
+          "three_state" : false,
+          "cascade" : "down"
+        },
+        "core" : {
+          "check_callback" : true
+        },
+
+        "plugins" : [ "checkbox", "dnd" ]
+      });
+
+
+        });
+
+       function submit() {
+        var data =  $('#plugins1').jstree('get_selected', true);
+        var name = []
+        $.each(data, function(index, val){
+            name.push($.trim(val.text))
+        })
+        //$.post("/receivedata", data = {x : name})
+
+        $.ajax({
+        type: "POST",
+        url: "/receivedata",
+        data:  {x : name},
+        success : function(){},
+        success:function(response){
+            document.write(response)
+        }
+    });
+        };
+
+
+
+      </script>
+ </body>
+</html>
