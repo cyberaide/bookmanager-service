@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from utils.getData import getBooks, getChapters
 
 app = Flask(__name__)
@@ -24,7 +24,11 @@ def chapterSelection(book):
 def GenYaml():
     return "Generate YAML File & PUSH TO Book Service"
 
-
+@app.route('/receivedata', methods=['GET','POST'])
+def receive_data():
+    data = request.form.getlist("x[]")
+    link = "https://www.yahoo.com"
+    return render_template("linktobook.html", data  = link)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug = True)
