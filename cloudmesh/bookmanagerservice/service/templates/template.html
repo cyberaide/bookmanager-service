@@ -18,17 +18,16 @@
     {% block content %}
     {% endblock %}
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-
-      <script>
+        <script>
       $(function () {
 
         $("#plugins1").jstree({
         "checkbox" : {
-          "keep_selected_style" : false
+          "keep_selected_style" : false,
+          "three_state" : false,
+          "cascade" : "down"
         },
         "core" : {
           "check_callback" : true
@@ -38,20 +37,29 @@
       });
 
 
-
-        $( "#submit" ).click(function() {
-            var data =  $('#plugins1').jstree('get_selected', true);
-            var name = []
-            $.each(data, function(index, val){
-                name.push(val.text)
-                alert(val.text)
-            })
-            alert(name[0])
-            });
-
         });
 
-      </script>
+       function submit() {
+        var data =  $('#plugins1').jstree('get_selected', true);
+        var name = []
+        $.each(data, function(index, val){
+            name.push($.trim(val.text))
+        })
+        //$.post("/receivedata", data = {x : name})
 
+        $.ajax({
+        type: "POST",
+        url: "/receivedata",
+        data:  {x : name},
+        success : function(){},
+        success:function(response){
+            document.write(response)
+        }
+    });
+        };
+
+
+
+      </script>
  </body>
 </html>
