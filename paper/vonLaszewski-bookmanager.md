@@ -321,7 +321,7 @@ Examples of yaml files are provided at
 * [python.yml](https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml)
 
 Bugs and enhancement suggestions can be submitted via
-[GitHub](https://github.com/cyberaide/bookmanager/issues)q
+[GitHub](https://github.com/cyberaide/bookmanager/issues)
 
 \clearpage
 
