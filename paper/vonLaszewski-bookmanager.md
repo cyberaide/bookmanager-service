@@ -1,22 +1,72 @@
+# Todo
+
+* add abstract in metadata.yaml
+* improve the writup
+
+
 # Introduction
 
 
-:o2: add you names in metadata.yaml
-
-:o2: add abstract in metadata.yaml
-
-:o2: improve the writup
-
-This draft is available at
-
-* <https://github.com/cyberaide/bookmanager-service/blob/master/paper/vonLaszewski-bookmanager.md>
-* <https://cyberaide.github.io/bookmanager-service/vonLaszewski-bookmanager.pdf>
 
 
-This service provides a cloud-based online bookmanager for
-individualized learning material for big data and cloud computing
-[@github-las-bookmanager-service].
+The pervasive importance of computing and cyberinfrastructure is broadly
+acknowledged in many areas of commercial, government, and academic
+endeavors. This is reflected in Indiana University's (IU) activities to
+build its new Intelligent Systems Engineering (ISE) program with a
+strong computational and information technology basis and situate it in
+the School of Informatics, Computing, and Engineering (SICE). As
+the curriculum needs to change and integrate modern concepts and practices
+in a rapid fashion, students are changing as well. Thus, we must not
+only support the rapid change of course material but also support the
+learning modes of Generation Z. Our work reported here is targeting this
+area, while we have learned from a four-year undergraduate
+curriculum designed ab initio and taught so far to our first two
+undergraduate classes, and invests it into developing active modules
+that are customized for Cyberinfrastructure Contributors (CIC)
+communities nucleated, built, and sustained via the dynamic use of
+GitHub. This includes content that targets Cloud Computing, Big Data
+Applications, and Analytics, Networking, High-Performance Computing,
+Artificial Intelligence/Machine Learning, and Information Visualization.
+The content is exposed in a modular format and reflects the needs of
+today’s tech-savvy students by incorporating successful
+community-building tools. In particular, for the work described here we
+leverage GitHub repositories to prepare the content and making them
+available on-demand for later learners and educators. This has the
+advantage that via a GitHub-based community model all can
+contribute to the course improving the text, the software, and providing
+a set of examples and we hope in this project to show that we can build
+both learning and sustainability communities by using the proven
+techniques of the open-source software community.
 
+One of the important observations is that today students in classes have
+vastly different backgrounds. What may be known to one student may not
+be for others. Thus it is important to be able to customize the learning
+experience not only to participate in a *standard* class, but be able to
+adapt the teaching material for individual students from that class.
+
+Thus we are in the need of a tool that can customize for example the
+creation of material form content located in different GitHub
+repositories. Such a tool has been written by von Laszewski
+[@github-las-bookmanager] and has been in use for over a year. However, this
+tool is command-line based and may not be convenient for beginner
+students that are not familiar with installing programs on their own
+computers yet. Hence, this work develops a web server hosted framework
+that allows creating the individualized course material from templates
+and convenient graphical Web pages, allowing a table of content to be
+assembled through drag and drop. Moreover, if during the study of the
+material it is found that material is missing it can easily be
+integrated into the individualized course table of content.
+
+The result of this work is two-fold:
+
+1. this service is developed as code and made available at
+   [@github-las-bookmanager-service]. 
+2. we will experiment with pacing the
+   service during a test phase online and have students from class
+   evaluate the tool and its features to obtain feedback for improvements.
+
+
+# TEXT FROM HERE ON OLD 
 
 # Summary
 
@@ -167,9 +217,6 @@ $ bookmanager tests/python.yaml get
 $ open dest/book.epub
 ```
 
-## References
-
-* Example Yamle file: <https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml>
 
 ## Requirements
 
@@ -224,7 +271,7 @@ file:
 * [[@pypi-las-bookmanager] Bookmanager on Pypi](<https://pypi.org/project/cyberaide-bookmanager/>)
 * [[@github-las-bookmanager] Bookmanager on GitHub](<https://github.com/cyberaide/bookmanager>)
 * [[@github-las-bookmanager-service] Bookmanager Service on Github](<https://github.com/cyberaide/bookmanager-service>)
-
+* [Example Yamle file](https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml)
 
 
 \clearpage

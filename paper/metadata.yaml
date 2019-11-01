@@ -9,7 +9,14 @@ author:
       | Naimesh Chaudhari, Geoffrey C. Fox
     affilation: Indiana University
     location: Indiana University, Bloomington, IN 47408
-    email: laszewski@gmail.com
+    email: |
+      | laszewski@gmail.com
+      |
+      | This draft is available at
+      | <https://github.com/cyberaide/bookmanager-service/blob/master/paper/vonLaszewski-bookmanager.md>
+      | <https://cyberaide.github.io/bookmanager-service/vonLaszewski-bookmanager.pdf>
+
+
 date: Nov. 1st, 2019
 tags: [education, bookmanager, epub, PDF, lecture notes]
 numbersections: yes
