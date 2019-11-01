@@ -7,21 +7,15 @@
 
 :o2: improve the writup
 
-
-
 This draft is available at
 
-* <>
+* <https://github.com/cyberaide/bookmanager-service/blob/master/paper/vonLaszewski-bookmanager.md>
 * <https://cyberaide.github.io/bookmanager-service/vonLaszewski-bookmanager.pdf>
 
 
 This service provides a cloud-based online bookmanager for
 individualized learning material for big data and cloud computing
 [@github-las-bookmanager-service].
-
-
-
-
 
 
 # Summary
