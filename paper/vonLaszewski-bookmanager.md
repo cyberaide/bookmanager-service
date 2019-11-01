@@ -375,6 +375,18 @@ BOOK:
 
 \clearpage
 
+## Creation of the PDF
+
+We assume that you have `pandoc`, `bookmanager` [@pypi-las-bookmanager]
+and `make` installed on your system.
+
+```
+git clone git@github.com:cyberaide/bookmanager-service.git
+make doc
+```
+
+This will create the PDF in the `docs` folder
+
 ## Refernces
 
 
