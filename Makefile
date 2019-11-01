@@ -31,6 +31,9 @@ list:
 	$(call banner, "TARGETS")
 	@grep '^[^#[:space:]].*:' Makefile
 
+doc:
+	cd paper; make
+
 setup:
 	# brew update
 	# brew install mongodb
