@@ -9,7 +9,10 @@
 
 
 
+This draft is available at
 
+* <>
+* <https://cyberaide.github.io/bookmanager-service/vonLaszewski-bookmanager.pdf>
 
 
 This service provides a cloud-based online bookmanager for
