@@ -1,6 +1,6 @@
-from flask import Flask
 from flask import Flask, render_template, request
-from utils.getData import getBooks, getChapters
+from cloudmesh.bookmanagerservice.service.utils.getData import getBooks, getChapters
+#from utils.getData import getBooks, getChapters
 
 app = Flask(__name__)
 
