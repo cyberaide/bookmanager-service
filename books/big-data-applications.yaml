@@ -9,7 +9,7 @@ metadata:
   url: "https://cloudmesh-community.github.io/book/vonlaszewski-big-data-applications.epub"
   description: "Proposed Lecture content (subject to change)"
   abstract: "Proposed Lecture content (subject to change)"
-  keywords: "Cloud, virtual machines, containers, cloud engenering"
+  keywords: "Cloud, virtual machines, containers, cloud engineering"
   stylesheet: "epub.css"
   dest: "./dest/book"
   filename: "vonLaszewski-big-data-applications.epub"
