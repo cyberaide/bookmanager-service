@@ -6,13 +6,20 @@
   <body>
     {% extends "template.html" %}
    {% block content %}
-        <ul class="menu">
+
+       <div class="w3-container">
+           <h2 class="logo">Cloud BookManager Service</h2>
+           <h4 class="logo">Please select a book to generate</h4>
+       </div>
+
+       <div class="w3-container">
+           <ul class="w3-ul">
                {% for item in data %}
-                    <li> <a href="{{ url_for('chapterSelection',  book  = item) }}">{{ item }}</a>  </li>
-                {% endfor %}
-
-        </ul>
-
+                   <li class="w3-hover-blue"><a href="{{ url_for('chapterselection',  book  = item) }}">{{ item }}</a>
+                   </li>
+               {% endfor %}
+           </ul>
+       </div>
    {% endblock %}
   </body>
 </html>
