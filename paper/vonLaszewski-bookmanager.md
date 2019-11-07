@@ -257,7 +257,7 @@ Simply add the following in case your local files are in
 specifies the link to the source. The variable github, will be used to
 replace the base with a link to the github repository.
 
-```
+```yaml
 file:
   "github": "https://github.com/cloudmesh-community/book/blob/master/chapters"
   "base": "../chapters"
@@ -279,7 +279,7 @@ file:
 
 # Manual Page {#sec:manual}
 
-```
+```yaml
 bookmanager -- a helper to create books 
                from markdown files in a yaml 
                TOC.
@@ -367,12 +367,12 @@ Examples of yaml files are provided at
 Bugs and enhancement suggestions can be submitted via
 [GitHub](https://github.com/cyberaide/bookmanager/issues)
 
-\clearpage
+
 
 # Yaml file example {#sec:yaml}
 
-```
----
+```yaml
+
 metadata:
   image: "cover.png"
   title: "Introduction to Python"
@@ -420,7 +420,7 @@ BOOK:
     - "{git.book}/prg/python/facedetection/facedetection.md"
 ```
 
-\clearpage
+
 
 ## Creation of the PDF
 

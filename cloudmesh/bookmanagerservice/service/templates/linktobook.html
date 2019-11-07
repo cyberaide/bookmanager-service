@@ -7,8 +7,13 @@
   <body>
   {% extends "template.html" %}
    {% block content %}
-    <h1> About Flask </h1>
-    <p> The link to your saved file is.</p>
-       <a href ={{data}}><li > The Link to google</li></a>
-  {% endblock %}
+       <div class="w3-container w3-padding-32">
+           <h1>Book Generated</h1>
+           <p>The link to your book is.</p>
+           <a href={{ data }}>
+               <li> The Link to google</li>
+           </a>
+       </div>
+
+   {% endblock %}
   </body>
