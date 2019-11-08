@@ -1,0 +1,186 @@
+[
+    {
+        "PREFACE": [
+            "{github.chapter}/version.md",
+            "{github.chapter}/preface/learning.md",
+            "{github.chapter}/preface/reader.md",
+            "{github.chapter}/preface/corrections.md",
+            "{github.chapter}/authors.md",
+            "{github.chapter}/preface/notation.md",
+            "{github.chapter}/preface/updates.md"
+        ]
+    },
+    "{github.chapter}/class/516/overview.md",
+    "{github.chapter}/cloud/definition.md",
+    {
+        "DATACENTER": [
+            "{github.chapter}/cloud/datacenter.md"
+        ]
+    },
+    {
+        "ARCHITECTURE": [
+            "{github.chapter}/cloud/arch.md",
+            "{github.chapter}/nist/bdra.md",
+            "{github.chapter}/cloud/arch-scheduling.md"
+        ]
+    },
+    {
+        "REST": [
+            "{github.chapter}/rest/rest.md",
+            {
+                "OPENAPI_3.0": [
+                    "{github.chapter}/rest/rest-spec.md",
+                    "{github.chapter}/rest/swagger-introspection.md",
+                    "{github.chapter}/rest/rest-ai.md"
+                ]
+            },
+            "{github.chapter}/rest/rest-restful.md",
+            "{github.chapter}/rest/rest-django.md",
+            "{github.chapter}/prg/github.md",
+            "{github.chapter}/rest/swagger.md",
+            {
+                "REST_WITH_EVE": [
+                    "{github.chapter}/rest/rest-eve.md",
+                    "{github.chapter}/rest/rest-haetos.md",
+                    "{github.chapter}/rest/rest-eve-extensions.md"
+                ]
+            },
+            {
+                "OPENAPI_2.0": [
+                    "{github.chapter}/rest/swagger-spec.md",
+                    "{github.chapter}/rest/swagger-introspection-2-0.md",
+                    "{github.chapter}/rest/swagger-codegen.md"
+                ]
+            },
+            "{github.chapter}/rest/rest-excersises.md"
+        ]
+    },
+    "{github.chapter}/graphql/graphql.md",
+    {
+        "HYPERVISOR": [
+            "{github.chapter}/cloud/virtualization.md",
+            "{github.chapter}/cloud/qemu.md",
+            "{github.chapter}/cloud/virsh.md"
+        ]
+    },
+    {
+        "IAAS": [
+            "{github.chapter}/iaas/iaas.md",
+            "{github.chapter}/iaas/aws/aws.md",
+            "{github.chapter}/iaas/azure/azure.md",
+            "{github.chapter}/iaas/watson/watson.md",
+            "{github.chapter}/iaas/gcloud/gcloud.md",
+            "{github.chapter}/iaas/openstack/openstack.md",
+            "{github.chapter}/iaas/libcloud.md",
+            "{github.chapter}/iaas/boto.md"
+        ]
+    },
+    {
+        "MAPREDUCE": [
+            "{github.chapter}/mapreduce/mapreduce.md",
+            {
+                "HADOOP": [
+                    "{github.chapter}/mapreduce/hadoop-lectures.md",
+                    "{github.chapter}/mapreduce/hadoop-installation.md",
+                    "{github.chapter}/mapreduce/hadoop-hdfs.md",
+                    "{github.chapter}/mapreduce/hadoop-hbase.md",
+                    "{github.chapter}/mapreduce/cm-hadoop.md"
+                ]
+            },
+            {
+                "SPARK": [
+                    "{github.chapter}/mapreduce/spark-lectures.md",
+                    "{github.chapter}/mapreduce/spark-installation.md",
+                    "{github.chapter}/mapreduce/spark-streaming.md",
+                    "{github.chapter}/mapreduce/spark-udf.md"
+                ]
+            },
+            {
+                "HADOOP_ECOSYSTEM": [
+                    {
+                        "ELASTIC_MAP_REDUCE": [
+                            "{github.chapter}/mapreduce/aws-emr.md"
+                        ]
+                    },
+                    {
+                        "TWISTER": [
+                            "{github.chapter}/mapreduce/twister.md",
+                            "{github.chapter}/mapreduce/twister-installation.md",
+                            "{github.chapter}/mapreduce/twister2-example.md"
+                        ]
+                    },
+                    "{github.chapter}/mapreduce/hadoop-rdma.md"
+                ]
+            }
+        ]
+    },
+    {
+        "CONTAINER": [
+            "{github.chapter}/container/container.md",
+            {
+                "DOCKER": [
+                    "{github.chapter}/container/docker-intro.md",
+                    "{github.chapter}/container/docker-local.md",
+                    "{github.chapter}/container/dockergithub.md",
+                    "{github.chapter}/container/dockerhub.md"
+                ]
+            },
+            {
+                "DOCKER_PAAS": [
+                    "{github.chapter}/container/SECTION-DOCKER-PAAS.md",
+                    "{github.chapter}/container/docker-swarm.md",
+                    "{github.chapter}/container/docker-fs.md",
+                    "{github.chapter}/container/docker-hadoop.md",
+                    "{github.chapter}/container/docker-pagerank-example-instruction.md",
+                    "{github.chapter}/container/docker-spark.md"
+                ]
+            },
+            {
+                "KUBERNETES": [
+                    "{github.chapter}/container/kubernetes-intro.md",
+                    "{github.chapter}/container/kubernetes-fs.md"
+                ]
+            },
+            "{github.chapter}/container/singularity/singularity.md",
+            "{github.chapter}/container/resources.md",
+            "{github.chapter}/container/exercise.md"
+        ]
+    },
+    {
+        "SERVERLESS": [
+            "{github.chapter}/faas/introduction.md",
+            "{github.chapter}/faas/aws-lambda.md",
+            "{github.chapter}/faas/openwhisk.md",
+            "{github.chapter}/faas/kubeless.md",
+            "{github.chapter}/faas/microsoft-azure-functions.md",
+            "{github.chapter}/faas/google-cloud-functions.md",
+            "{github.chapter}/faas/openfaas.md",
+            "{github.chapter}/faas/openlambda.md"
+        ]
+    },
+    {
+        "MESSAGING": [
+            "{github.chapter}/msg/mqtt.md",
+            "{github.chapter}/msg/avro.md"
+        ]
+    },
+    {
+        "GO": [
+            "{github.chapter}/prg/go/go-intro.md",
+            "{github.chapter}/prg/go/go-install.md",
+            "{github.chapter}/prg/go/go-editor.md",
+            "{github.chapter}/prg/go/go-language.md",
+            "{github.chapter}/prg/go/go-libraries.md",
+            "{github.chapter}/prg/go/go-cmd.md",
+            "{github.chapter}/prg/go/go-rest.md",
+            "{github.chapter}/prg/go/go-openapi.md",
+            "{github.chapter}/prg/go/go-cloud.md",
+            "{github.chapter}/prg/go/go-links.md"
+        ]
+    },
+    {
+        "REFERENCES": [
+            "{github.chapter}/empty.md"
+        ]
+    }
+]
