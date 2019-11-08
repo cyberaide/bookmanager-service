@@ -6,9 +6,6 @@
 
 ## Introduction
 
-
-
-
 The pervasive importance of computing and cyberinfrastructure is broadly
 acknowledged in many areas of commercial, government, and academic
 endeavors. This is reflected in Indiana University's (IU) activities to
@@ -317,7 +314,7 @@ The command searches for all images within the
 Markdown document and fetches them so the document 
 can be created locally with the images. We assume all
 images in the md document are for now not specified 
-via http locations but via relative locations.
+via HTTP locations but via relative locations.
 
 To view the document use your favourite ePub Reader
 
@@ -325,20 +322,20 @@ Other commands include:
 
 * `bookmanager YAML download [--format=FORMAT]`
 
-  downloads the urls into the ./dest directory 
+  downloads the URLs into the ./dest directory 
   for local processing
 
 * `bookmanager YAML check [--format=FORMAT]`
 
-  checks if the urls in the yaml file exist
+  checks if the URLs in the yaml file exist
 
 * `bookmanager YAML urls  [--format=FORMAT]`
 
-  lists all urls of the yaml file
+  lists all URLs of the YAML file
 
 * `bookmanager YAML list [--format=FORMAT]`
 
-  lists the yaml file
+  lists the YAML file
 
 Not implemented are the following features:
 
@@ -347,14 +344,14 @@ Not implemented are the following features:
 YAML Table of Contents format:
 
 The table of contents for the book can be 
-controlled with a simple yaml file that has 
+controlled with a simple YAML file that has 
 some specific contextual enhancements. This 
 includes the creation of a BOOK section that 
 has the sections outlined in hierarchical
 form, and contains chapter and section headers 
 without links that are automatically generated.
 
-Examples of yaml files are provided at
+Examples of YAML files are provided at
 
 * [python.yml](https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml)
 
@@ -429,5 +426,5 @@ make doc
 This will create the PDF in the `docs` folder
 
 ## References
-
+https://github.com/dgraziotin/acm_sig_paper_markdown_pandoc
 
