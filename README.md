@@ -72,4 +72,4 @@ Bookmanager command line tool links:
 
 * <https://pypi.org/project/cyberaide-bookmanager/>
 * <https://github.com/cyberaide/bookmanager>
-* https://github.com/cyberaide/bookmanager/blob/master/README.md>
+* <https://github.com/cyberaide/bookmanager/blob/master/README.md>
