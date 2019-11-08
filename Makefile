@@ -34,6 +34,9 @@ list:
 doc:
 	cd paper; make
 
+view:
+	open -a skim docs/vonLaszewski-bookmanager.pdf
+
 setup:
 	# brew update
 	# brew install mongodb

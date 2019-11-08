@@ -20,11 +20,11 @@ github:
   "community": "https://raw.githubusercontent.com/cloudmesh-community"
 BOOK:
   - PREFACE:
-    - "{github.chapter}/version.md"
+#    - "{github.chapter}/version.md"
     - "{github.chapter}/preface/learning.md"
     - "{github.chapter}/preface/reader.md"
     - "{github.chapter}/preface/corrections.md"
-    - "{github.chapter}/authors.md"
+#    - "{github.chapter}/authors.md"
     - "{github.chapter}/preface/notation.md"
     - "{github.chapter}/preface/updates.md"
   - "{github.chapter}/class/516/overview.md"
@@ -95,7 +95,7 @@ BOOK:
     - DOCKER:
       - "{github.chapter}/container/docker-intro.md"
       - "{github.chapter}/container/docker-local.md"
-      - "{github.chapter}/container/dockergithub.md"
+#      - "{github.chapter}/container/dockergithub.md"
       - "{github.chapter}/container/dockerhub.md"
     - DOCKER_PAAS:
       - "{github.chapter}/container/SECTION-DOCKER-PAAS.md"
