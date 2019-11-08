@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    {% extends "template.html" %}
+   {% block content %}
+       <div class="w3-container">
+           <h4 class="logo">Please select the chapters you would like to study</h4>
+       </div>
+       <div class="w3-container w3-padding-16">
+           <div id="plugins1">
+               <ul class="menu">
+                   {% for item in data %}
+                       <li class="jstree-open" id= {{ item }}> {{ item }}
+                           <ul>
+                               {% for j in data[item] %}
+                                   <li> {{ j }} </li>
+                               {% endfor %}
+                           </ul>
+                       </li>
+                   {% endfor %}
+               </ul>
+           </div>
+       </div>
+
+       <div class="w3-container w3-padding-32">
+           <button onclick=submit() class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
+       </div>
+   {% endblock %}
+
+
+
+  </body>
+</html>

@@ -1,0 +1,72 @@
+[
+    {
+        "PREFACE": [
+            "{github.credit}/disclaimer.md"
+        ]
+    },
+    {
+        "WEEK_1": [
+            "{github.chapter}/bigdata/week1.md"
+        ]
+    },
+    {
+        "WEEK_2": [
+            "{github.chapter}/bigdata/week2.md"
+        ]
+    },
+    {
+        "WEEK_3": [
+            "{github.chapter}/bigdata/week3.md"
+        ]
+    },
+    {
+        "WEEK_4": [
+            "{github.chapter}/bigdata/week5.md"
+        ]
+    },
+    {
+        "WEEK_5": [
+            "{github.chapter}/prg/python/google-colab/python-google-colab.md"
+        ]
+    },
+    {
+        "WEEK_6": [
+            "{github.chapter}/bigdata/week6.md"
+        ]
+    },
+    {
+        "WEEK_7": [
+            "{github.chapter}/bigdata/week7.md"
+        ]
+    },
+    {
+        "WEEK_8": [
+            "{github.chapter}/bigdata/week8.md"
+        ]
+    },
+    {
+        "ASSIGNMENTS": [
+            "{github.chapter}/bigdata/assignments/index.md",
+            {
+                "WEEKLY_ASSIGNMENTS": [
+                    "{github.chapter}/bigdata/assignments/assignment1.md",
+                    "{github.chapter}/bigdata/assignments/assignment2.md",
+                    "{github.chapter}/bigdata/assignments/assignment3.md",
+                    "{github.chapter}/bigdata/assignments/assignment4.md",
+                    "{github.chapter}/bigdata/assignments/assignment5.md",
+                    "{github.chapter}/bigdata/assignments/assignment6.md"
+                ]
+            }
+        ]
+    },
+    {
+        "GITHUB": [
+            "{github.chapter}/bigdata/github/index.md"
+        ]
+    },
+    {
+        "REFERENCES": [
+            "{github.chapter}/empty.md"
+        ]
+    }
+]

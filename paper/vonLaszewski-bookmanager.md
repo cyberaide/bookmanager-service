@@ -1,187 +1,180 @@
-# Todo
+# To do
 
-* add abstract in metadata.yaml
-* improve the writup
-
-
-# Introduction
+* Add abstract in Metadata.yaml
+* Improve the Write-up
 
 
-
+## Introduction
 
 The pervasive importance of computing and cyberinfrastructure is broadly
 acknowledged in many areas of commercial, government, and academic
 endeavors. This is reflected in Indiana University's (IU) activities to
 build its new Intelligent Systems Engineering (ISE) program with a
 strong computational and information technology basis and situate it in
-the School of Informatics, Computing, and Engineering (SICE). As
-the curriculum needs to change and integrate modern concepts and practices
-in a rapid fashion, students are changing as well. Thus, we must not
+the School of Informatics, Computing, and Engineering (SICE). As students 
+are changing the curriculum needs to change and integrate modern concepts 
+and practices in a rapid fashion as well. Thus, we must not
 only support the rapid change of course material but also support the
 learning modes of Generation Z. Our work reported here is targeting this
 area, while we have learned from a four-year undergraduate
-curriculum designed ab initio and taught so far to our first two
-undergraduate classes, and invests it into developing active modules
+curriculum designed *ab initio* and taught so far to our first two
+undergraduate classes. We aim to invest it into developing active modules
 that are customized for Cyberinfrastructure Contributors (CIC)
 communities nucleated, built, and sustained via the dynamic use of
 GitHub. This includes content that targets Cloud Computing, Big Data
-Applications, and Analytics, Networking, High-Performance Computing,
+Applications and Analytics, Networking, High-Performance Computing,
 Artificial Intelligence/Machine Learning, and Information Visualization.
 The content is exposed in a modular format and reflects the needs of
 today’s tech-savvy students by incorporating successful
 community-building tools. In particular, for the work described here we
-leverage GitHub repositories to prepare the content and making them
+leverage GitHub repositories to prepare the content and make them
 available on-demand for later learners and educators. This has the
 advantage that via a GitHub-based community model all can
 contribute to the course improving the text, the software, and providing
-a set of examples and we hope in this project to show that we can build
+a set of examples. We hope in this project to show that we can build
 both learning and sustainability communities by using the proven
 techniques of the open-source software community.
 
 One of the important observations is that today students in classes have
-vastly different backgrounds. What may be known to one student may not
-be for others. Thus it is important to be able to customize the learning
+vastly different backgrounds. What may be common knowledge to one student may not
+be known by others. Thus it is important to be able to customize the learning
 experience not only to participate in a *standard* class, but be able to
-adapt the teaching material for individual students from that class.
+adapt the teaching material for individual students into a *personalized* class.
 
-Thus we are in the need of a tool that can customize for example the
+Thus we are in need of a tool that can customize, for example, the
 creation of material form content located in different GitHub
 repositories. Such a tool has been written by von Laszewski
 [@github-las-bookmanager] and has been in use for over a year. However, this
 tool is command-line based and may not be convenient for beginner
-students that are not familiar with installing programs on their own
-computers yet. Hence, this work develops a web server hosted framework
-that allows creating the individualized course material from templates
-and convenient graphical Web pages, allowing a table of content to be
+students that are not yet familiar with installing programs on their own
+computers. Therefore this work develops a webserver-hosted framework
+that allows the creation of individualized course material from templates
+and convenient graphical web pages with a table of content to be
 assembled through drag and drop. Moreover, if during the study of the
-material it is found that material is missing it can easily be
-integrated into the individualized course table of content.
+material it is found that material is missing, it can easily be
+integrated into the individualized course table of contents.
 
 The result of this work is two-fold:
 
-1. this service is developed as code and made available at
-   [@github-las-bookmanager-service]. 
-2. we will experiment with pacing the
+* This service is developed as code and made available at
+   [@github-las-bookmanager-service].
+* We will experiment with pacing the
    service during a test phase online and have students from class
    evaluate the tool and its features to obtain feedback for improvements.
 
 
 # TEXT FROM HERE ON OLD 
 
-# Summary
+## Summary
 
 We have a number of distributed documentation written by
 different groups and organizations and users. Although we can
-put an html link up with the collection students, researchers,
-tutorial participants can benefit from a tool that integrates
-all of them into a single Document and not just a collection
-of links. This allows for a “book” like distribution of the
-content written by various people and hosted on various and
+put an html link up with the collection, students, researchers and
+tutorial participants benefit from a tool that integrates
+all of them into a single document rather than forcing them into an assembly of multiple
+of links. This allows for a book-like distribution of the
+content written by various authors and hosted on various
 GitHub repositories.
 
 In our case it also serves as a mechanism for generating class
 proceedings of reports developed by students so they can take
-them “home” after they did the class.
+them “home” after completing class work.
 
-## The solution
+### The solution
 
-We have a simple tool called bokmanager that creates an epub
+For this problem, we have a simple tool called Bookmanager that creates an epub
 of documents specified in a yaml table of contents. The
-documents will be fetched from the url, the images downloaded
-and an epub generated. This epub (if not to big) can than be
-browes not only on your computer, but also on your iPads and
-cell phones, so you can add them to your book collection
+documents will be fetched from the url and then the images downloaded
+and an epub generated. This epub (as long as it is not too big) can then be
+browsed not only on your computer, but also on tablets and
+mobile devices, so you can peruse course materials at will as part of your online "book collection".
 
 
-## Sample yaml file
+### Sample yaml file
 
 * <https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml>
 
-## Summary of Benefit
+### Summary of Benefits
 
 * Simple to use
-* leverages pandoc, so more formats in future will be
-* supported
-* pulls together information from several sources
-* auto generated title page
-* epub
+* Leverages Pandoc, so more formats in future will be supported
+* Pulls together information from several sources
+* An auto-generated title page
+* ePublished
 
 
 
-# Idea
+## Idea
 
-We have a tool called cyberaide bookmanager
-[@pypi-las-bookmanager][@github-las-bookmanager]  that can create books
-based on markdown files that are distributed online in github (not only
-for data science and cloud computing, but that is where we have most
+We have a tool called "cyberaide bookmanager"
+[@pypi-las-bookmanager][@github-las-bookmanager] that can create books
+based on markdown files that are then distributed online in Github (it is not only
+for data science and cloud computing, but that is where we have most of the
 material).
 
-# Design Aspects
+## Design Aspects
 
-1. We like to host the creation of such a book in a container and
-   place it online on a cloud or web service. (containerization is easy
-   and mostly done for the command line, but not for the html/gui portion)
+1. We aim to host the creation of such a book in a container and
+   place it online on a cloud or web service. (Containerization is easy
+   and mostly done for the command line, but not for the HTML/GUI portion)
 
-2. We like to allow people that visit a web page, select class modules
-   that are automatically integrated in customized books for that student
+2. We would like to allow people that visit a web page and select class modules
+   that are then automatically integrated in customized books for that student
 
 3. The integration could be as simple as clicking on some chapters in a
    table of content that we distribute
 
-4. The interface could be enabled with javascript where you drag and
+4. The interface could be enabled with Javascript, where you drag and
    drop the chapters into a hierarchy with chapter titles that could be
-   added or are derived from the included markdown
+   added or are derived from the included Markdown
 
-5. We would like to facilitate a markdown test that prior to the
-   inclusion tests if the markdown is ok while using markdown lint
-   (mdl).
+5. We would like to facilitate a Markdown test that prior to the
+   inclusion tests if the Markdown is ok while using Markdownlint
+   (MDL).
 
-6. (optional) as extension we like to include different formats, such
-   as PDF, word, rst, txt, .org mode (this is in part easy as we use
-   in the container pandoc that supports these formats.
+6. Finally, an (optional) extension we woud like to include would be 
+   the ability to switch to different formats, such
+   as PDF, Word, rst, .txt, .org mode (this might be easier as we already use
+   the container Pandoc that supports these formats.)
 
 
-# Requirements
+## Requirements
 
 Obviously, you need to have some Javascript/HTML/Webpage experience.
-These days almost all students have them so I think that is doable. I
-am open to suggestions for javascript framework, but i heard electron
-may be a good choice so we can ost the service in the cloud, but also
-run locally.
+These days almost all students have them so this is doable. We are
+open to suggestions for Javascript framework, but hear Electron
+may be a good choice also so we can host the service in the cloud in addition to 
+running locally.
 
-Other than a manual and programing the project has a 2 page report
+Other than a manual and programming the project has a 2 page report
 requirement in markdown not LaTeX. The reason this is so low is that
 you spend more time on programming than writing the report. You should
 think of the report also like a mini manual, so you let the users know
-why its good and how they can use it.
+why it is helpful and how they can use it.
 
 
-
-
-# Bookmanager
-
-
+## Bookmanager
 
 Bookmanager is a tool to create a publication from a number of sources on the
 internet. It is especially useful to create customized books, lecture notes, or
-handouts. Content is best integrated in markdown format as it is very fast to
-produce the output. At present we only produce epubs, but it will be easy to
-also create pdf, html, work, odt and others. As we use pandoc we can support the
-formats supported by it.
+handouts. Content is best integrated in Markdown as this format is able to
+produce the output very quickly. At present we only produce epubs, but it will be easy to
+also create PDF, HTML, Word, ODT and others in the future. As we use Pandoc we can support the
+formats that are usually used in conjunction.
 
-Implemented Features:
+### Implemented Features:
 
-* Table of contents with indentation levels can be specified via yaml
-* Special variable substitution of elements defined in the yaml file
-* Documents are fetched from github 
-* The documents will be inspected and the images found in them are fetched 
-  (we assume the images are relative to the document, http links will not be modified)
+* Table of contents with indentation levels can be specified via YAML
+* Special variable substitution of elements defined in the YAML file
+* Documents are fetched from Github 
+* The documents will be inspected and the images found in them fetched 
+  (we assume the images are related to the document, HTTP links will not be modified)
 * Automatic generation of a cover page
-* Output is generated in a dest directory
+* Output is generated in a destination directory
 
-Planed enhancements:
+### Planned enhancements:
 
-* integration of References via pandoc citeref
+* integration of References via Pandoc Citeref
 * integration of Section, Table, Image references via pandoc crossref
 
 If you like to help get in contact with Gregor von Laszewski
@@ -191,23 +184,23 @@ If you like to help get in contact with Gregor von Laszewski
 $ pip install cyberaide-bookmanager
 ```
 
-## Usage
+### Usage
 
 The manual page is listed in [@sec:manual]
 
-## Cover Page 
 
-Book manager can create a simple cover page for you.
+### Cover Page 
 
-and example is given at 
+Bookmanager can create a simple cover page for you.
 
+The example is given at 
 
 * <https://github.com/cyberaide/bookmanager/blob/master/tests/example/cover.png>
 
-![Cover Page](https://github.com/cyberaide/bookmanager/raw/master/tests/example/cover-thumb.png){width=2in}
+![Cover Page](https://github.com/cyberaide/bookmanager/raw/master/tests/example/cover-thumb.png){width=3in}
 
 
-## Example creation
+### Example creation
 
 ```bash
 $ git clone https://github.com/cyberaide/bookmanager.git
@@ -218,54 +211,53 @@ $ open dest/book.epub
 ```
 
 
-## Requirements
+### Requirements
 
 Book manager requires the existence of some cloudmesh yaml files, In future releases we intend to remove them.
-Simply do 
+Simply run 
 
 ```bash
 $ mkdir -p ~/.cloudmesh
 $ wget -P ~/.cloudmesh https://raw.githubusercontent.com/cloudmesh/cloudmesh-configuration/master/cloudmesh/configuration/etc/cloudmesh.yaml
 ```
 
-In addition we require an up to date version of pandoc. Please consult with the
-pandoc documentation on how to do this. Unfortunately the versions distributed
-with ubuntu are outdated. On ubuntu you can say:
+In addition an up-to-date version of Pandoc is required. Please consult with the
+Pandoc documentation on how to do this. Unfortunately the versions distributed
+with Ubuntu are outdated. On Ubuntu you can say:
 
 ```bash
 wget -q https://github.com/jgm/pandoc/releases/download/2.7.2/pandoc-2.7.2-1-amd64.deb
 sudo dpkg -i pandoc-2.7.2-1-amd64.deb
 pandoc --version
 ```
-We recommend pandoc version 2.7.2.
+We recommend Pandoc version 2.7.2.
 
-## Example Yaml file
+### Example YAML file
 
-The example in the appendix [@sec:yaml] shows a yaml file including a
-table of contents that is used to assemble the document from github
+The example in the appendix [@sec:yaml] shows a YAML file including a
+table of contents that is used to assemble the document from Github
 locations.
  
 
-## Automated github links
+### Automated Github links
 
 It is possible to replace the local link that will be added to the
-files with a link to a github repository. At this time this is only
+files with a link to a Github repository. At this time this is only
 supported for documents that are in the same repository.
 
 Simply add the following in case your local files are in
 `../chapter`. While specifying it in the `base`. This variable
-specifies the link to the source. The variable github, will be used to
-replace the base with a link to the github repository.
+specifies the link to the source. The variable "github" will be used to
+replace the base with a link to the Github repository.
 
-```
+```yaml
 file:
   "github": "https://github.com/cloudmesh-community/book/blob/master/chapters"
   "base": "../chapters"
 ```
 
 
-
-## Links
+### Links
 
 * [Bookmanager home page](https://github.com/cyberaide/bookmanager)
 * [[@pypi-las-bookmanager] Bookmanager on Pypi](<https://pypi.org/project/cyberaide-bookmanager/>)
@@ -273,13 +265,12 @@ file:
 * [[@github-las-bookmanager-service] Bookmanager Service on Github](<https://github.com/cyberaide/bookmanager-service>)
 * [Example Yamle file](https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml)
 
-
 \clearpage
 
 
-# Manual Page {#sec:manual}
+## Manual Page {#sec:manual}
 
-```
+```yaml
 bookmanager -- a helper to create books 
                from markdown files in a yaml 
                TOC.
@@ -311,19 +302,19 @@ Options:
 
 **Description**
 
-In principal you only need one command at this 
+In principle, you only need one command at this 
 time. All other commands are available for test 
 purposes.
 
-You can create an epub with
+You can create an ePub with
 
 * `bookmanager YAML get [--format=FORMAT]`
 
 The command searches for all images within the 
-markdown document and fetches them so the document 
+Markdown document and fetches them so the document 
 can be created locally with the images. We assume all
 images in the md document are for now not specified 
-via http locations but via relative locations.
+via HTTP locations but via relative locations.
 
 To view the document use your favourite ePub Reader
 
@@ -331,20 +322,20 @@ Other commands include:
 
 * `bookmanager YAML download [--format=FORMAT]`
 
-  downloads the urls into the ./dest directory 
+  downloads the URLs into the ./dest directory 
   for local processing
 
 * `bookmanager YAML check [--format=FORMAT]`
 
-  checks if the urls in the yaml file exist
+  checks if the URLs in the yaml file exist
 
 * `bookmanager YAML urls  [--format=FORMAT]`
 
-  lists all urls of the yaml file
+  lists all URLs of the YAML file
 
 * `bookmanager YAML list [--format=FORMAT]`
 
-  lists the yaml file
+  lists the YAML file
 
 Not implemented are the following features:
 
@@ -353,26 +344,26 @@ Not implemented are the following features:
 YAML Table of Contents format:
 
 The table of contents for the book can be 
-controlled with a simple yaml file that has 
+controlled with a simple YAML file that has 
 some specific contextual enhancements. This 
 includes the creation of a BOOK section that 
 has the sections outlined in hierarchical
 form, and contains chapter and section headers 
 without links that are automatically generated.
 
-Examples of yaml files are provided at
+Examples of YAML files are provided at
 
 * [python.yml](https://github.com/cyberaide/bookmanager/blob/master/tests/python.yml)
 
 Bugs and enhancement suggestions can be submitted via
 [GitHub](https://github.com/cyberaide/bookmanager/issues)
 
-\clearpage
+
 
 # Yaml file example {#sec:yaml}
 
-```
----
+```yaml
+
 metadata:
   image: "cover.png"
   title: "Introduction to Python"
@@ -420,7 +411,7 @@ BOOK:
     - "{git.book}/prg/python/facedetection/facedetection.md"
 ```
 
-\clearpage
+
 
 ## Creation of the PDF
 
@@ -434,6 +425,6 @@ make doc
 
 This will create the PDF in the `docs` folder
 
-## Refernces
-
+## References
+https://github.com/dgraziotin/acm_sig_paper_markdown_pandoc
 
