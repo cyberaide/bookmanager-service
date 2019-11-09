@@ -1,9 +1,3 @@
-# To do
-
-* Add abstract in Metadata.yaml
-* Improve the Write-up
-
-
 ## Introduction
 
 The pervasive importance of computing and cyberinfrastructure is broadly
@@ -63,8 +57,6 @@ The result of this work is two-fold:
    evaluate the tool and its features to obtain feedback for improvements.
 
 
-# TEXT FROM HERE ON OLD 
-
 ## Summary
 
 We have a number of distributed documentation written by
@@ -101,7 +93,6 @@ mobile devices, so you can peruse course materials at will as part of your onlin
 * Pulls together information from several sources
 * An auto-generated title page
 * ePublished
-
 
 
 ## Idea
