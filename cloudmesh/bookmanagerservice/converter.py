@@ -7,6 +7,7 @@ import ruamel.yaml
 from ruamel.yaml import YAML
 import re
 from pprint import pprint
+import os
 
 class Converter(object):
 
@@ -44,7 +45,6 @@ class Converter(object):
                 self.toc = eval(self.toc)
                 data1 = []
                 links = self.unpack(self.toc)
-                print(links)
                 for link in links:
                     r = requests.get(link)
                     previous = None
@@ -97,6 +97,9 @@ class Converter(object):
         return content[0]
 
 ## change path if needed
+os.chdir('..')
+os.chdir('..')
+os.chdir('books')
 path = Path('.')
 ## list of yaml files
 LoF = list(path.glob('*.yaml'))
