@@ -7,6 +7,7 @@ import ruamel.yaml
 from ruamel.yaml import YAML
 import re
 from pprint import pprint
+import os
 
 class Converter(object):
 
@@ -44,7 +45,6 @@ class Converter(object):
                 self.toc = eval(self.toc)
                 data1 = []
                 links = self.unpack(self.toc)
-                print(links)
                 for link in links:
                     r = requests.get(link)
                     previous = None
@@ -53,25 +53,42 @@ class Converter(object):
                             break;
                         if line[0] == '#':
                             title = line.split(" ", 1)
-                            print(title[1])
-                            data1.append({link: title[1]})
+                            newTitle = title[1].split(" ")
+                            newTempTitle = ""
+                            for item in newTitle:
+                                if item.isalpha():
+                                    newTempTitle += item + " "
+                            data1.append({link: newTempTitle})
 
                         elif line[0] in ["=", '-', "^", "~"]:
                             line = previous
                             title = line.split(" ", 1)
                             if len(title) < 2:
-                                data1.append({link: title[0]})
+                                data1.append({link: newTempTitle})
                                 break;
                             else:
-                                data1.append({link: title[1]})
+                                newTitle = title[1].split(" ")
+                                newTempTitle = ""
+                                for item in newTitle:
+                                    if item.isalpha():
+                                        newTempTitle += item + " "
+                                data1.append({link: newTempTitle})
                                 break;
                         previous = line
                 self.toc = str(self.toc)
                 for item in data1:
                     for key in item.keys():
                         if key in self.toc:
-                            self.toc = self.toc.replace(key, str(item))
+                            c = str(item)
+                            self.toc = self.toc.replace(key, c)
 
+                self.toc = self.toc.replace(", '{", ",{")
+                self.toc = self.toc.replace("}',", "},")
+                self.toc = self.toc.replace("}']}", "}]}")
+                self.toc = self.toc.replace(": ['{", ": [{")
+
+
+                self.toc = eval(self.toc)
                 self.book[self.book_title_string] = self.toc
             except yaml.YAMLError:
                 print(yaml.YAMLError)
@@ -79,7 +96,6 @@ class Converter(object):
     def unpack(self, content):
         nList = []
         for item in content:
-            print(item)
             if isinstance(item, dict):
                 nList += (self.unpack(list(item.values())[0]))
             else:
@@ -97,6 +113,9 @@ class Converter(object):
         return content[0]
 
 ## change path if needed
+os.chdir('..')
+os.chdir('..')
+os.chdir('books')
 path = Path('.')
 ## list of yaml files
 LoF = list(path.glob('*.yaml'))
@@ -104,5 +123,7 @@ LoF = list(path.glob('*.yaml'))
 for f in LoF:
    source = f
    #destination = f.replace('.yaml', '.json')
-   Converter.convert(Converter(), source)
+   i = Converter()
+   Converter.convert(i, source)
+   print(i.getBook())
 
