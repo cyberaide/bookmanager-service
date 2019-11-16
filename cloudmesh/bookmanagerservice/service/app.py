@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from flask_misaka import Misaka
-from cloudmesh.bookmanagerservice.service.converter import Converter
 from cloudmesh.bookmanagerservice.service import getdata
 from pprint import pprint
 
