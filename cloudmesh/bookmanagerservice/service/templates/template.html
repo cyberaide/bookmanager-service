@@ -5,63 +5,15 @@
    <title>Flask Parent Template</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-
  </head>
  <body>
- <nav class="w3-bar w3-blue">
-     <a href="{{ url_for('home') }}" class="w3-button w3-bar-item">Bookmanager Service</a>
-     <a href="{{ url_for('about') }}" class="w3-button w3-bar-item">About</a>
-     <a href="{{ url_for('manual') }}" class="w3-button w3-bar-item">Instructions</a>
+     <nav class="w3-bar w3-blue">
+         <a href="{{ url_for('home') }}" class="w3-button w3-bar-item">Bookmanager Service</a>
+         <a href="{{ url_for('about') }}" class="w3-button w3-bar-item">About</a>
+         <a href="{{ url_for('manual') }}" class="w3-button w3-bar-item">Instructions</a>
+     </nav>
+     {% block content %}
+      {% endblock %}
 
- </nav>
-
-
- {% block content %}
-    {% endblock %}
-
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-        <script>
-      $(function () {
-
-        $("#plugins1").jstree({
-        "checkbox" : {
-          "keep_selected_style" : false,
-          "three_state" : false,
-          "cascade" : "down"
-        },
-        "core" : {
-          "check_callback" : true
-        },
-
-        "plugins" : [ "checkbox", "dnd" ]
-      });
-
-
-        });
-
-       function submit() {
-        var data =  $('#plugins1').jstree('get_selected', true);
-        var name = []
-        $.each(data, function(index, val){
-            name.push($.trim(val.text))
-        })
-        //$.post("/receivedata", data = {x : name})
-
-        $.ajax({
-        type: "POST",
-        url: "/receivedata",
-        data:  {x : name},
-        success : function(){},
-        success:function(response){
-            document.write(response)
-        }
-    });
-        };
-
-
-
-      </script>
  </body>
 </html>

@@ -64,21 +64,37 @@ def rec(dat, k=None, idx=None):
 
 
 
-def getBooks():
+def getBooks(onlybooks = False, filename = ""):
     bks = {}
-    files = glob.glob("books/*.yaml")
-    for f in files:
-        #f = 'books/test.yaml'
+    if onlybooks:
+        files = glob.glob("books/*.yaml")
+        for f in files:
+            tst = YAML(typ='safe')
+            dat = tst.load(Path(f))
+            title = dat['metadata']['title']
+            title = " ".join(title.split("\n"))
+            bks[title] = f
+        return bks
+
+    else:
+        f = filename
+        global final
         final = []
         seeds = []
+        global links
         links = []
-        errors = []
+        global errors
+        errors =  []
         tst = YAML(typ='safe')
         dat = tst.load(Path(f))
+        global dat2
         dat2 = dat['BOOK']
         title = dat['metadata']['title']
         title = " ".join(title.split("\n"))
+        global fullLink
         fullLink = dat['github']
         rec(dat2)
-        bks[title] = {'file': f, 'data': final, 'links': links}
-    return bks
+        bks[title] = {'file': f, 'data': final, 'links': links, 'metadata' : dat['metadata']}
+        print("The Broken Links Are")
+        pprint(errors)
+        return bks

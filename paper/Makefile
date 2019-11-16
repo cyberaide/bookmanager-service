@@ -3,7 +3,7 @@ OUTPUT = ../docs
 
 FLAGS = \
 	-F pandoc-crossref \
-	-f markdown \
+        -f markdown \
 	--pdf-engine=pdflatex \
 	--filter=bin/table-filter.py \
 	--filter=pandoc-citeproc \
