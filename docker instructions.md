@@ -22,4 +22,4 @@
 
 7. Type python -u -m flask run --host 0.0.0.0
 
-8. Navigate to http://localhost:5000/
+8. Navigate to http://localhost:5000/ or the displayed link
