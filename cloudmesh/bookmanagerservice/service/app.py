@@ -1,6 +1,11 @@
+import sys
+from os.path import dirname
+sys.path.append(dirname(__file__))
+
 from flask import Flask, render_template, request
 from flask_misaka import Misaka
-from cloudmesh.bookmanagerservice.service import getdata
+
+import getdata
 from pprint import pprint
 
 app = Flask(__name__)
