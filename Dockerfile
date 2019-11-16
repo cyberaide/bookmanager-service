@@ -119,8 +119,5 @@ RUN pip install ruamel.yaml
 WORKDIR /root
 
 #ENTRYPOINT ["/bookmanager/bin/pull.sh"]
-
 CMD [ "/bin/bash" ]
-
-
 
