@@ -95,6 +95,6 @@ def getBooks(onlybooks = False, filename = ""):
         fullLink = dat['github']
         rec(dat2)
         bks[title] = {'file': f, 'data': final, 'links': links, 'metadata' : dat['metadata']}
-        print("The Broken Links Are")
-        pprint(errors)
+        #print("The Broken Links Are")
+        #pprint(errors)
         return bks

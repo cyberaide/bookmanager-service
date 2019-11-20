@@ -53,25 +53,6 @@ RUN ./configure --enable-optimizations
 
 RUN make altinstall
 
-
-#
-# INSTALL PACKAGED PYTHON 3.7
-#
-
-#RUN apt-get install -y software-properties-common
-#RUN add-apt-repository ppa:ubuntu-toolchain-r/ppa
-# RUN pip install --upgrade pip setuptools
-
-#RUN apt-get autoremove
-
-#RUN apt-get install -y python3.7
-# RUN apt-get install python3-distutils
-# RUN apt-get install python3-setuptools
-# RUN sudo easy_install3 pip
-#RUN apt-get install -y python3-pip
-#RUN pip3 install --upgrade pip setuptools
-
-
 RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 10
 RUN update-alternatives --config python
 
@@ -96,7 +77,7 @@ WORKDIR /tmp
 # INSTALL PANDOC
 #
 RUN wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
-RUN dpkg -i pandoc-2.7.3-1-amd64.deb
+RUN dpkg -i pandoc-2.7.3-1-amd64.debon
 RUN pandoc --version
 
 RUN wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.4.1a/linux-pandoc_2_7_3.tar.gz
@@ -117,6 +98,11 @@ RUN pip install Flask-Misaka
 RUN pip install ruamel.yaml
 
 WORKDIR /root
+
+#Swtich Workdir
+#DO a git Pull
+#assign event variables
+
 
 #ENTRYPOINT ["/bookmanager/bin/pull.sh"]
 CMD [ "/bin/bash" ]
