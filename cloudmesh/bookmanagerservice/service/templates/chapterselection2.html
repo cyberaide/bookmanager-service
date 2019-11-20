@@ -25,10 +25,17 @@
        function submit() {
         var data =  $('#plugins1').jstree('get_selected', true);
         var name = []
+        var v = $('#plugins1').jstree(true).get_json('#', {flat:true})
+        var mytext = JSON.stringify(v);
+        //alert(mytext);
+
         $.each(data, function(index, val){
-            name.push($.trim(val.id))
+            //name[$.trim(val.id)] = JSON.stringify(val)
+            //alert(JSON.stringify(val))
+            name.push(JSON.stringify(val))
+
         })
-           alert(name)
+           alert(JSON.stringify(name))
         //$.post("/receivedata", data = {x : name})
         $.ajax({
         type: "POST",

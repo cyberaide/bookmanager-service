@@ -1,10 +1,11 @@
 import sys
 from os.path import dirname
+import pickle
 sys.path.append(dirname(__file__))
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from flask_misaka import Misaka
-
+import json
 import getdata
 from pprint import pprint
 
@@ -52,7 +53,11 @@ def genyaml():
 @app.route('/receivedata', methods=['GET', 'POST'])
 def receive_data():
     data = request.form.getlist("x[]")
-    print(data)
+    for i in range(0,len(data)):
+        data[i] = json.loads(data[i])
+        print(data[i], file=sys.stderr)
+    #with open('returnedData.pkl', 'wb') as f:
+    #    pickle.dump(data, f)
     link = "https://www.yahoo.com"
     return render_template("linktobook.html", data=link)
 
