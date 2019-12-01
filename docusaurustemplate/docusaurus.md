@@ -12,22 +12,22 @@ You can write additional content using [GitHub-flavored Markdown syntax](https:/
 
 * Useful for running in HTML
 * Can try it out on different platforms
----
+
 metadata:
-  image: "cover.png"
-  title: "Sample"
-  subtitle: "Test"
-  author: "Gregor von Laszewski"
-  subauthor: ""
-  email: "laszewski@gmail.com"
-  url: "https://github.com/cyberaide/bookmanager"
-  description: "The lecture notes for e516"
-  abstract: "Lecture notes for e516"
-  keywords: "Cloud, Cloud Computing"
-  stylesheet: "epub.css"
-  dest: "./dest/book"
-  filename: "vonLaszewski-e516-proceedings.epub"
-  rights: (c) Gregor von Laszewski, 2018, 2019
+  -image: "cover.png"
+  -title: "Sample"
+  -subtitle: "Test"
+  -author: "Gregor von Laszewski"
+  -subauthor: ""
+  -email: "laszewski@gmail.com"
+  -url: "https://github.com/cyberaide/bookmanager"
+  -description: "The lecture notes for e516"
+  -abstract: "Lecture notes for e516"
+  -keywords: "Cloud, Cloud Computing"
+  -stylesheet: "epub.css"
+  -dest: "./dest/book"
+  -filename: "vonLaszewski-e516-proceedings.epub"
+  -rights: (c) Gregor von Laszewski, 2018, 2019
 git:
   "book": "https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters"
 github:
