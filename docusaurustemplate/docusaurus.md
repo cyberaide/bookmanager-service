@@ -12,20 +12,6 @@ You can write additional content using [GitHub-flavored Markdown syntax](https:/
 
 * Useful for running in HTML
 * Can try it out on different platforms
-
-{
-  "docs": {
-    "Docusaurus": [
-      "doc1",
-+     "doc9"
-    ],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
-  }
-}
 ---
 metadata:
   image: "cover.png"
@@ -115,7 +101,7 @@ BOOK:
   ##    - "{github.chapter}/authors.md"
   ##    - "{github.chapter}/preface/create.md"
   ##    - "{github.chapter}/preface/notation.md"
-  ##    - "{github.chapter}/preface/updates.md"
-  ##    - "{github.chapter}/preface/emoji.md"
+    - "{github.chapter}/preface/updates.md"
+     - "{github.chapter}/preface/emoji.md"
   - REFERENCES:
       - "{github.template}/empty.md"
