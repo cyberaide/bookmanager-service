@@ -1,1 +1,5 @@
+flask
+flask-misaka
+PyYAML
+requests
 # not yet

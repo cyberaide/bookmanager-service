@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
+  <head>
+    <meta charset="utf-8">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+      <script>
+
+
+        $(function () {
+            $("#plugins1").jstree({
+                "checkbox": {
+                    "keep_selected_style": false,
+                    "three_state": false,
+                    "cascade": "down"
+                }, "core": {
+                    "check_callback": true,
+                    'data': {{ data['data'] | tojson }}
+                },
+                "plugins": ["checkbox", "dnd"]
+            });
+        });
+
+
+       function submit() {
+        var data =  $('#plugins1').jstree('get_selected', true);
+        var name = []
+        var v = $('#plugins1').jstree(true).get_json('#', {flat:true})
+        var mytext = JSON.stringify(v);
+        //alert(mytext);
+
+        $.each(data, function(index, val){
+            //name[$.trim(val.id)] = JSON.stringify(val)
+            //alert(JSON.stringify(val))
+            name.push(JSON.stringify(val))
+
+        })
+           alert(JSON.stringify(name))
+        //$.post("/receivedata", data = {x : name})
+        $.ajax({
+        type: "POST",
+        url: "/receivedata",
+        data:  {x : name},
+        success : function(){},
+        success:function(response){
+            document.write(response)
+        }
+    });
+        };
+
+
+        </script>
+
+
+  </head>
+  <body>
+    {% extends "template.html" %}
+   {% block content %}
+       <div class="w3-container">
+           <h4 class="logo">Please select the chapters you would like to study</h4>
+       </div>
+       <div class="w3-container w3-padding-16">
+           <div id="plugins1">
+           </div>
+       </div>
+
+       <div class="w3-container w3-padding-32">
+           <button onclick=submit() class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
+       </div>
+   {% endblock %}
+
+  </body>
+</html>

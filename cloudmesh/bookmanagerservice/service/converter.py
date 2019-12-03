@@ -1,13 +1,6 @@
 import yaml
-from yaml import Loader
-import json
-from pathlib import Path
 import requests
-import ruamel.yaml
-from ruamel.yaml import YAML
-import re
-from pprint import pprint
-import os
+
 
 class Converter(object):
 
@@ -17,7 +10,55 @@ class Converter(object):
         self.book_title_string = None
         self.source = None
         self.book = {}
-        #self.destination = None
+        # self.destination = None
+
+    def gettitle(self, source):
+        source = source
+        with open(source, 'r') as stream:
+
+            try:
+                data = yaml.load(stream, yaml.FullLoader)
+                metadata = data['metadata']
+                github = data['github']
+                gitHeaders = github.keys()
+
+                self.book_title_string = metadata['title'].replace('\n', "")
+
+                return {'title': self.book_title_string, 'file': stream.name}
+            except yaml.YAMLError:
+                print(yaml.YAMLError)
+
+    def gettoc(self, source):
+        source = source
+        with open(source, 'r') as stream:
+            try:
+                data = yaml.load(stream, yaml.FullLoader)
+                metadata = data['metadata']
+                github = data['github']
+                gitHeaders = github.keys()
+                self.toc = data['BOOK']
+                # print(self.toc)
+                for item in gitHeaders:
+                    phrase = "{github." + item + "}"
+                    for i in range(len(self.toc)):
+                        if isinstance(self.toc[i], dict):
+                            values = self.toc[i].get(list(self.toc[i].keys())[0])
+                            values = self.unpack(values)
+                            for j in range(len(values)):
+                                values[j] = values[j].replace(phrase, github[item])
+
+                            newd = {list(self.toc[i].keys())[0]: values}
+                            self.toc[i] = newd
+                        else:
+                            # print(self.toc[i])
+                            val = self.toc[i].replace(phrase, github[item])
+                            print(val)
+                            print({'IDK' + str(i): str(val)})
+                            self.toc[i] = {'IDK' + str(i): [val]}
+
+                return self.toc
+            except yaml.YAMLError:
+                print(yaml.YAMLError)
 
     def convert(self, source):
         """
@@ -25,8 +66,8 @@ class Converter(object):
         """
 
         source = source
-        #self.destination = destionation
-        with open(f, 'r') as stream:
+        # self.destination = destionation
+        with open(source, 'r') as stream:
 
             try:
                 data = yaml.load(stream, yaml.FullLoader)
@@ -53,12 +94,17 @@ class Converter(object):
                             break;
                         if line[0] == '#':
                             title = line.split(" ", 1)
+<<<<<<< HEAD:cloudmesh/bookmanagerservice/converter.py
                             newTitle = title[1].split(" ")
                             newTempTitle = ""
                             for item in newTitle:
                                 if item.isalpha():
                                     newTempTitle += item + " "
                             data1.append({link: newTempTitle})
+=======
+                            # print(title[1])
+                            data1.append({link: title[1]})
+>>>>>>> Updated YAML selection and JSTree Implementation Based on Professors Suggestion:cloudmesh/bookmanagerservice/service/converter.py
 
                         elif line[0] in ["=", '-', "^", "~"]:
                             line = previous
@@ -93,9 +139,15 @@ class Converter(object):
             except yaml.YAMLError:
                 print(yaml.YAMLError)
 
+            return self
+
     def unpack(self, content):
         nList = []
         for item in content:
+<<<<<<< HEAD:cloudmesh/bookmanagerservice/converter.py
+=======
+            # print(item)
+>>>>>>> Updated YAML selection and JSTree Implementation Based on Professors Suggestion:cloudmesh/bookmanagerservice/service/converter.py
             if isinstance(item, dict):
                 nList += (self.unpack(list(item.values())[0]))
             else:
@@ -111,6 +163,7 @@ class Converter(object):
         content = request.text.split('\n')
 
         return content[0]
+<<<<<<< HEAD:cloudmesh/bookmanagerservice/converter.py
 
 ## change path if needed
 os.chdir('..')
@@ -127,3 +180,5 @@ for f in LoF:
    Converter.convert(i, source)
    print(i.getBook())
 
+=======
+>>>>>>> Updated YAML selection and JSTree Implementation Based on Professors Suggestion:cloudmesh/bookmanagerservice/service/converter.py
