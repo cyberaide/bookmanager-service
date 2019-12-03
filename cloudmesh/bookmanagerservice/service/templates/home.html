@@ -13,13 +13,32 @@
        </div>
 
        <div class="w3-container">
-           <ul class="w3-ul">
+           <ul id = 'books' class="w3-ul">
                {% for item in data %}
-                   <li class="w3-hover-blue"><a href="{{ url_for('chapterselection',  book  = item) }}">{{ item }}</a>
+                   <li class="w3-hover-blue" value = "{{ item }}" ><a >{{ item}}</a>
                    </li>
                {% endfor %}
            </ul>
        </div>
-   {% endblock %}
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js" ></script>
+    <script>
+            $('#books li').click(function () {
+                var $this = $(this);
+                $.ajax({
+                    type: "POST",
+                    url: "/chapterselection",
+                    data: {x: $this.attr("value")},
+                    success: function () {},
+                    success: function (response) {
+                        window.history.pushState("object or string", "Title", "/chapterselection")
+                        document.write(response)
+                    }
+                })
+                });
+    </script>
+{% endblock %}
   </body>
 </html>

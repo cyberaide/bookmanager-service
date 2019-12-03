@@ -13,13 +13,16 @@
            <div id="plugins1">
                <ul class="menu">
                    {% for item in data %}
-                       <li class="jstree-open" id= {{ item }}> {{ item }}
-                           <ul>
-                               {% for j in data[item] %}
+                       {% for key, value in item.items() %}
+                       <li class="jstree-open" id= {{ key }}> {{ key }}
+                          <ul>
+                               {% for j in value %}
                                    <li> {{ j }} </li>
                                {% endfor %}
                            </ul>
+
                        </li>
+                       {% endfor %}
                    {% endfor %}
                </ul>
            </div>
@@ -28,9 +31,55 @@
        <div class="w3-container w3-padding-32">
            <button onclick=submit() class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
        </div>
-   {% endblock %}
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js" defer ></script>
+         <script >
+              $(function () {
+
+                $("#plugins1").jstree({
+                "checkbox" : {
+                  "keep_selected_style" : false,
+                  "three_state" : false,
+                  "cascade" : "down"
+                },
+                "core" : {
+                  "check_callback" : true
+                },
+
+                "plugins" : [ "checkbox", "dnd" ]
+              });
+
+
+                });
+
+               function submit() {
+                var data =  $('#plugins1').jstree('get_selected', true);
+                var name = []
+                    $.each(data, function(index, val){
+                        name.push($.trim(val.text))
+                        //gen yaml file here?
+                        alert($.trim(val.text))
+                    })
+                //$.post("/receivedata", data = {x : name})
+                $.ajax({
+                type: "POST",
+                url: "/receivedata",
+                data:  {x : name},
+                success : function(){},
+                success:function(response){
+
+                    document.write(response)
+                }
+            });
+                };
 
 
 
+
+
+          </script>
+{% endblock %}
   </body>
 </html>
