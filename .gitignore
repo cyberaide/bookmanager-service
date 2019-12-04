@@ -90,3 +90,8 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+/books/samples
+bmservice.bat
+bmservice.py
+/books/nai_test.yaml

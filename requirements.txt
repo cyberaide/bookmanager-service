@@ -2,4 +2,8 @@ flask
 flask-misaka
 PyYAML
 requests
+ruamel.yaml
+nested_lookup
+oyaml
+collections
 # not yet

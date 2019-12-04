@@ -96,6 +96,9 @@ RUN pip install -e .
 RUN pip install Flask
 RUN pip install Flask-Misaka
 RUN pip install ruamel.yaml
+RUN pip install nested_lookup
+RUN pip install oyaml
+RUN pip install collections
 
 WORKDIR /root
 
