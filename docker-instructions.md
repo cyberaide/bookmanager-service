@@ -9,8 +9,11 @@
    - Windows users do not use command prompt
    - You can type powershell in the address bar of the folder directory to bring it up
 
-4. Type docker build -t bigdata:v1 .
+4. Within Terminal/Powershell type the following commands: 
+```bash 
+docker build -t bigdata:v1 .
+python bmservice.py
+```
 
-5. Type python bmservice.py
 
 6. Navigate to http://localhost:5000/ or the displayed link
