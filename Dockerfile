@@ -77,7 +77,7 @@ WORKDIR /tmp
 # INSTALL PANDOC
 #
 RUN wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
-RUN dpkg -i pandoc-2.7.3-1-amd64.debon
+RUN dpkg -i pandoc-2.7.3-1-amd64.deb
 RUN pandoc --version
 
 RUN wget https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.4.1a/linux-pandoc_2_7_3.tar.gz
@@ -98,13 +98,10 @@ RUN pip install Flask-Misaka
 RUN pip install ruamel.yaml
 RUN pip install nested_lookup
 RUN pip install oyaml
-RUN pip install collections
+
 
 WORKDIR /root
 
-#Swtich Workdir
-#DO a git Pull
-#assign event variables
 
 
 #ENTRYPOINT ["/bookmanager/bin/pull.sh"]
