@@ -85,5 +85,5 @@ mystr = re.sub(r'([\n])  ([A-Z])', r'\n- \2', mystr)
 
 #print(mystr)
 bookTitle = metadata['title']
-with open('books/samples/nai_test.yaml', 'w+') as f:
+with open('books/nai_test.yaml', 'w+') as f:
     f.write(mystr)
