@@ -4,6 +4,7 @@
     <meta charset="utf-8">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+
       <script>
 
 
@@ -15,7 +16,7 @@
                     "cascade": "down"
                 }, "core": {
                     "check_callback": true,
-                    'data': {{ data['data'] | tojson }}
+                    'data': {{ files[0]['data'] | tojson }}
                 },
                 "plugins": ["checkbox", "dnd"]
             });
@@ -25,6 +26,7 @@
        function submit() {
         var data =  $('#plugins1').jstree('get_selected', true);
         var name = []
+        var bktit = document.querySelector(".bookt").textContent
         var v = $('#plugins1').jstree(true).get_json('#', {flat:true})
         var mytext = JSON.stringify(v);
         //alert(mytext);
@@ -35,12 +37,12 @@
             name.push(JSON.stringify(val))
 
         })
-           alert(JSON.stringify(name))
         //$.post("/receivedata", data = {x : name})
+        alert(bktit)
         $.ajax({
         type: "POST",
         url: "/receivedata",
-        data:  {x : name},
+        data:  {x : name, y: bktit },
         success : function(){},
         success:function(response){
             document.write(response)
@@ -57,6 +59,7 @@
     {% extends "template.html" %}
    {% block content %}
        <div class="w3-container">
+        <h1 class = "bookt"> {{ files[1] }} </h1>
            <h4 class="logo">Please select the chapters you would like to study</h4>
        </div>
        <div class="w3-container w3-padding-16">
