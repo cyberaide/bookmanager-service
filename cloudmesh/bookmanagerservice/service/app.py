@@ -9,9 +9,12 @@ import json
 import getdata
 from pprint import pprint
 
+
 app = Flask(__name__)
 Misaka(app, fenced_code=True, highlight=True)
 bks = getdata.getBooks(onlybooks=True)
+
+
 
 @app.route('/')
 @app.route('/index')
@@ -40,9 +43,9 @@ def manual():
 def chapterselection(book):
     bkinfo = getdata.getBooks(onlybooks = False, filename = bks[book])
     toc = bkinfo[book]
-    print("\nThe Metadata is\n")
-    pprint(toc['metadata'])
-    return render_template("chapterselection2.html", data=toc)
+    #print("\nThe Metadata is\n")
+    #pprint(toc['metadata'])
+    return render_template("chapterselection2.html", files=[toc,str(book)])
 
 
 @app.route("/genyaml")
@@ -53,9 +56,12 @@ def genyaml():
 @app.route('/receivedata', methods=['GET', 'POST'])
 def receive_data():
     data = request.form.getlist("x[]")
+    bktit = request.form.getlist("y")
     for i in range(0,len(data)):
         data[i] = json.loads(data[i])
-        print(data[i], file=sys.stderr)
+        #print(data[i], file=sys.stderr)
+    print(data)
+    print(bktit)
     #with open('returnedData.pkl', 'wb') as f:
     #    pickle.dump(data, f)
     link = "https://www.yahoo.com"
