@@ -13,11 +13,14 @@
    * Mac: Under file sharing please make sure your locka drives are added. 
    * <img src="https://docs.docker.com/v17.12/docker-for-mac/images/menu/d4m-menu-prefs-fileshare.png" alt="alt text" width="500" height="400">
 
-3. Navigate to the bookmanager-service folder and open [terminal/powershell] here
-   - Windows users do not use command prompt
-   - You can type powershell in the address bar of the folder directory to bring it up
-
-4. Within Terminal/Powershell type the following commands: 
+3. Windows users if you do not have git please install it from the following link: https://git-scm.com/download/win
+4. Navigate to your preferred location for download and open Terminal/PowerShell in that directory
+5. Clone the bookmanager-service to you prefered location using **git** and go into the folder
+  ```bash
+   git clone git@github.com:cyberaide/bookmanager-service.git 
+   cd bookmanager-service
+  ```
+5. Within Terminal/Powershell type the following commands: 
 ```bash 
 docker build -t bigdata:v1 .
 python bmservice.py
