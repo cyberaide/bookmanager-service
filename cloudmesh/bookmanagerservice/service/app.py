@@ -1,6 +1,7 @@
 import sys
 from os.path import dirname
 import pickle
+import subprocess
 sys.path.append(dirname(__file__))
 
 from flask import Flask, render_template, request, jsonify
@@ -8,6 +9,7 @@ from flask_misaka import Misaka
 import json
 import getdata
 from pprint import pprint
+from generateYAML import yamlGenerator
 
 
 app = Flask(__name__)
@@ -60,10 +62,10 @@ def receive_data():
     for i in range(0,len(data)):
         data[i] = json.loads(data[i])
         #print(data[i], file=sys.stderr)
-    print(data)
-    print(bktit)
-    #with open('returnedData.pkl', 'wb') as f:
-    #    pickle.dump(data, f)
+    #print(data)
+    #print(bktit)
+    yamlGenerator(bktit[0], data)
+    subprocess.run('bookmanager /opt/project/bookmanager-service/books/booksgenerated/nai_test.yaml get', shell = True)
     link = "https://www.yahoo.com"
     return render_template("linktobook.html", data=link)
 

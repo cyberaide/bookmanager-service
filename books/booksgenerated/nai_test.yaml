@@ -1,0 +1,33 @@
+metadata:
+  image: cover.png
+  title: Cloud Computing
+  subtitle: ''
+  author: Gregor von Laszewski
+  subauthor: Editor
+  email: laszewski@gmail.com
+  url: https://cloudmesh-community.github.io/book/vonlaszewski-cloud.epub
+  description: Proposed Lecture content (subject to change)
+  abstract: Proposed Lecture content (subject to change)
+  keywords: Cloud, virtual machines, containers, cloud engenering
+  stylesheet: epub.css
+  dest: ./dest/book
+  filename: vonLaszewski-cloud.epub
+  rights: (c) Gregor von Laszewski, 2018, 2019
+BOOK:
+- PREFACE:
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/learning.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/reader.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/corrections.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/notation.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/updates.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/class/516/overview.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/cloud/definition.md
+- IAAS:
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/iaas.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/aws/aws.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/azure/azure.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/watson/watson.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/gcloud/gcloud.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/openstack/openstack.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/libcloud.md
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/iaas/boto.md

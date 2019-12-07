@@ -12,7 +12,7 @@ from nested_lookup import get_all_keys
 import getdata
 
 
-def yamlGenerator(bookTitle, bookData):
+def yamlGenerator(bookTitle, data):
     bks = getdata.getBooks(onlybooks=True)
     tstbk = bookTitle
     bkinfo = getdata.getBooks(onlybooks=False, filename=bks[tstbk])
@@ -21,7 +21,7 @@ def yamlGenerator(bookTitle, bookData):
     mainData = bkinfo[tstbk]['data']
     links = bkinfo[tstbk]['links']
     metadata = bkinfo[tstbk]['metadata']
-    data = pickle.load(open(bookData, "rb"))
+    #data = pickle.load(open(bookData, "rb"))
 
     final = {}
     for d in data:
@@ -60,7 +60,7 @@ def yamlGenerator(bookTitle, bookData):
 
     # print(mystr)
     bookTitle = metadata['title']
-    with open('books/nai_test.yaml', 'w+') as f:
+    with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
         f.write(mystr)
 
 
