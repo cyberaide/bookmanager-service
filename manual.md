@@ -1,4 +1,7 @@
-# Instructions to get the Docker Service Running
+## Instructions on how to get the Bookmanager Service to run on your device
+
+
+## Instructions to get the Docker Service Running
 
 
 1. Please ensure docker is installed and under setting expose daemon on tcp... is checked
