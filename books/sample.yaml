@@ -12,7 +12,7 @@ metadata:
   keywords: "Cloud, Cloud Computing"
   stylesheet: "epub.css"
   dest: "./dest/book"
-  filename: "vonLaszewski-e516-proceedings.epub"
+  filename: "sample.epub"
   rights: (c) Gregor von Laszewski, 2018, 2019
 git:
   "book": "https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters"
