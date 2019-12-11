@@ -1,4 +1,4 @@
-### Manual on how to get the Bookmanager Service to run
+# Manual on how to get the Bookmanager Service to run
 To get bookmanager working through docusaurus. First run
 
 ```cd to the directory of your local repository.
@@ -31,7 +31,7 @@ A new browser window opens up at http://localhost:3000.
 
 Hooray! We now have an HTML site. Now it's time to run some other commands.
 
-# Adding Pages
+### Adding Pages
 We first need a documentation page. In the docs folder make a file and name it whatever you like (we chose TRex1.md). This will be in the root section of the Docusaurus site.
 
 Here is what the first page/file should look like:
@@ -63,7 +63,7 @@ const siteConfig = {
   ...
 }
 ```
-#In the website directory, run ```npm run build``` or ```yarn build```. The command generates a build directory inside the website directory, containing HTML files (and other file types) for all of your docs and other pages. Make sure the docusaurus-tutorial/website/build directory is successfully created before running the next step.
+In the website directory, run ```npm run build``` or ```yarn build```. The command generates a build directory inside the website directory, containing HTML files (and other file types) for all of your docs and other pages. Make sure the docusaurus-tutorial/website/build directory is successfully created before running the next step.
 
 Replace all necessary items like 'USERNAME' with your username.
 
@@ -102,6 +102,6 @@ python bmservice.py
 
 6. Finally, navigate to http://localhost:5000/ or the displayed link to make sure the service works
 
-References: 
+### References: 
 https://docusaurus.io/docs/en/tutorial-create-new-site 
             https://www.modelplusmodel.com/plugins/bookmanager.html
