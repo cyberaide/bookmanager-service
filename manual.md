@@ -1,4 +1,4 @@
-### Manual on how to get the Bookmanager Service to run with Docusaurus on your device
+### Manual on how to get the Bookmanager Service to run
 To get bookmanager working through docusaurus. First run
 
 ```cd to the directory of your local repository.
@@ -102,5 +102,6 @@ python bmservice.py
 
 6. Finally, navigate to http://localhost:5000/ or the displayed link to make sure the service works
 
-References: https://docusaurus.io/docs/en/tutorial-create-new-site 
+References: 
+https://docusaurus.io/docs/en/tutorial-create-new-site 
             https://www.modelplusmodel.com/plugins/bookmanager.html
