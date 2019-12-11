@@ -22,6 +22,7 @@ def yamlGenerator(bookTitle, data):
     mainData = bkinfo[tstbk]['data']
     links = bkinfo[tstbk]['links']
     metadata = bkinfo[tstbk]['metadata']
+    filenm = metadata['filename']
     #data = pickle.load(open(bookData, "rb"))
 
     final = {}
@@ -63,6 +64,8 @@ def yamlGenerator(bookTitle, data):
     bookTitle = metadata['title']
     with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
         f.write(mystr)
+
+    return filenm
 
 
 def rec(data, vals):
