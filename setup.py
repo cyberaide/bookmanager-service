@@ -76,4 +76,9 @@ setup(
     ],
     zip_safe=False,
     namespace_packages=['cloudmesh'],
+    entry_points={
+        'console_scripts': [
+            'bookmanager-service = cloudmesh.bookmanagerservice.bmservice:bmservice',
+        ],
+    }
 )
