@@ -1,7 +1,7 @@
 metadata:
   image: cover.png
-  title: Cloud Computing
-  subtitle: ''
+  title: "e516 - Engineering Cloud \nComputing"
+  subtitle: "for Engineering, Data Science, \nand Computer Science Students"
   author: Gregor von Laszewski
   subauthor: Editor
   email: laszewski@gmail.com
@@ -11,14 +11,8 @@ metadata:
   keywords: Cloud, virtual machines, containers, cloud engenering
   stylesheet: epub.css
   dest: ./dest/book
-  filename: vonLaszewski-cloud.epub
-  rights: (c) Gregor von Laszewski, 2018, 2019
+  filename: vonLaszewski-e516-syllabus.epub
+  rights: (c) Gregor von Laszewski, 2019
 BOOK:
-- PREFACE:
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/learning.md
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/reader.md
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/corrections.md
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/notation.md
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/preface/updates.md
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/class/516/overview.md
-  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/cloud/definition.md
+- SYLLABUS:
+  - https://raw.githubusercontent.com/cloudmesh-community/book/master/chapters/class/516/syllabus-2019.md
