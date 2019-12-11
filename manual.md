@@ -1,5 +1,76 @@
-## Instructions on how to get the Bookmanager Service to run on your device
+### Manual on how to get the Bookmanager Service to run with Docusaurus on your device
+To get bookmanager working through docusaurus. First run
 
+```cd to the directory of your local repository.
+cd docusaurus-tutorial
+```
+
+Then, enter the ```docusaurus-init``` command in the terminal.
+
+```docusaurus-init
+```
+
+This might take some time. Be patient.
+
+Here's an example directory that will be created. Some example documentation pages (under docs) and blog posts (under website/blog) are included.
+```
+├── Dockerfile
+├── docker-compose.yml
+├── docs
+│   ├── doc1.md
+│   ├── exampledoc4.md
+└── website
+       ├── siteConfig.js
+       └── yarn.lock
+```
+
+Next, run ```cd website``` to go in the ```website``` directory.
+Then run ```npm start```. ```yarn start``` works as well.
+
+A new browser window opens up at http://localhost:3000.
+
+Hooray! We now have an HTML site. Now it's time to run some other commands.
+
+# Adding Pages
+We first need a documentation page. In the docs folder make a file and name it whatever you like (we chose TRex1.md). This will be in the root section of the Docusaurus site.
+
+Here is what the first page/file should look like:
+```const React = require('react');
+
+const CompLibrary = require('../../core/CompLibrary.js');
+
+const Container = CompLibrary.Container;
+const GridBlock = CompLibrary.GridBlock;
+
+function NewDoc(props) {
+  return (
+    <div className="docMainWrapper wrapper">
+      <Container className="mainContainer documentContainer postContainer">
+        <Your text here>
+      </Container>
+    </div>
+  );
+}
+module.exports = NewDoc;
+```
+Next, pull up the file the file docusaurus-tutorial/website/siteConfig.js and place the values below in there. 
+```
+const siteConfig = {
+  ...
+  url: 'https://USERNAME.github.io', // Replace USERNAME with your GitHub username.
+  baseUrl: '/bookmanager-service/', // The name of the bookmanager service
+  projectName: 'bookmanager-service',  // The name of the bookmanager service. Same as above.
+  ...
+}
+```
+#In the website directory, run ```npm run build``` or ```yarn build```. The command generates a build directory inside the website directory, containing HTML files (and other file types) for all of your docs and other pages. Make sure the docusaurus-tutorial/website/build directory is successfully created before running the next step.
+
+Replace all necessary items like 'USERNAME' with your username.
+
+Now run 
+```GIT_USER=USERNAME CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages # SSH```
+
+Now you can see bookmanager on github at https://github.com/USERNAME/bookmanager!
 
 ## Instructions to get the Docker Service Running
 
@@ -13,7 +84,7 @@
 2. Next, navigate to docker preferences
    * Windows: Under shared drives please make sure your local drives are checked
    * <img src="https://docs.docker.com/docker-for-windows/images/settings-shared-drives.png" alt="alt text" width="500" height="400">
-   * Mac: Under file sharing please make sure your locka drives are added. 
+   * Mac: Under file sharing please make sure your local drives are added. 
    * <img src="https://docs.docker.com/v17.12/docker-for-mac/images/menu/d4m-menu-prefs-fileshare.png" alt="alt text" width="500" height="400">
 
 3. For Windows users, if you do not have Git you will need to install it from the following link: https://git-scm.com/download/win
@@ -31,3 +102,5 @@ python bmservice.py
 
 6. Finally, navigate to http://localhost:5000/ or the displayed link to make sure the service works
 
+References: https://docusaurus.io/docs/en/tutorial-create-new-site 
+            https://www.modelplusmodel.com/plugins/bookmanager.html
