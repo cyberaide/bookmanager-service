@@ -1,7 +1,6 @@
 # Manual on how to get the Bookmanager Service to run
 
 
-
 ## Instructions to get the Docker Service Running
 
 
@@ -17,11 +16,11 @@
 
 2. Next, navigate to docker preferences
 
-   * Windows: Under shared drives please make sure your local drives are checked
+   * Windows 10 Pro or Edu: Under shared drives please make sure your local drives are checked
    * <img src="https://docs.docker.com/docker-for-windows/images/settings-shared-drives.png" alt="alt text" width="500" height="400">
    * Mac: Under file sharing please make sure your local drives are added. 
    * <img src="https://docs.docker.com/v17.12/docker-for-mac/images/menu/d4m-menu-prefs-fileshare.png" alt="alt text" width="500" height="400">
-
+  
 3. For Windows users, if you do not have Git you will need to install it from the following link: https://git-scm.com/download/win
 4. Navigate to your preferred location for downloading and open the Terminal/PowerShell in that directory
 5. Clone the bookmanager-service to your prefered location using **git** and click on the folder that appears
