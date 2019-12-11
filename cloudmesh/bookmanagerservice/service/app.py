@@ -1,20 +1,19 @@
 import sys
 from os.path import dirname
 import os
-import pickle
 import subprocess
 sys.path.append(dirname(__file__))
 
-from flask import Flask, render_template, request, jsonify, send_from_directory, send_file, Response
+from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_misaka import Misaka
 import json
 import getdata
-from pprint import pprint
 from generateYAML import yamlGenerator
-UPLOAD_FOLDER = '/opt/project/bookmanager-service/dest/'
+
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = '/opt/project/bookmanager-service/dest/'
+app.config['BOOKS_FOLDER'] = '/opt/project/bookmanager-service/books/booksgenerated/'
 Misaka(app, fenced_code=True, highlight=True)
 bks = getdata.getBooks(onlybooks=True)
 
@@ -47,8 +46,6 @@ def manual():
 def chapterselection(book):
     bkinfo = getdata.getBooks(onlybooks = False, filename = bks[book])
     toc = bkinfo[book]
-    #print("\nThe Metadata is\n")
-    #pprint(toc['metadata'])
     return render_template("chapterselection2.html", files=[toc,str(book)])
 
 
@@ -58,7 +55,7 @@ def genyaml():
 
 @app.route("/download/<string:flname>")
 def download(flname):
-    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=flname, as_attachment=True)
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=flname, as_attachment=True, attachment_filename = "book.epub")
 
 @app.route('/receivedata', methods=['GET', 'POST'])
 def receive_data():
@@ -66,9 +63,21 @@ def receive_data():
     bktit = request.form.getlist("y")
     for i in range(0,len(data)):
         data[i] = json.loads(data[i])
-    flnm = yamlGenerator(bktit[0], data)
-    subprocess.run('bookmanager /opt/project/bookmanager-service/books/booksgenerated/nai_test.yaml get', shell = True)
-    return render_template('linktobook.html', data = flnm)
+    flnm,hex = yamlGenerator(bktit[0], data)
+
+    #check if hex is in generated books in dest
+    gg = app.config['UPLOAD_FOLDER'] + hex + '.epub'
+    if os.path.exists(gg):
+        print("Found")
+    else:
+        print('File does not exist')
+        subprocess.run("bookmanager " + app.config['BOOKS_FOLDER'] + hex + '.yaml get', shell = True)
+        st = "dest/" + flnm
+        ed = "dest/" + hex + ".epub"
+        os.rename(st, ed)
+
+
+    return render_template('linktobook.html', data = hex + ".epub")
 
 if __name__ == '__main__':
     app.run(debug=True)
