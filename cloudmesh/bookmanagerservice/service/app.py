@@ -11,10 +11,10 @@ import json
 import getdata
 from pprint import pprint
 from generateYAML import yamlGenerator
-
+UPLOAD_FOLDER = '/opt/project/bookmanager-service/dest/'
 
 app = Flask(__name__)
-app.config['DEST'] = "/opt/project/bookmanager-service/dest/"
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 Misaka(app, fenced_code=True, highlight=True)
 bks = getdata.getBooks(onlybooks=True)
 
@@ -56,6 +56,9 @@ def chapterselection(book):
 def genyaml():
     return "Generate YAML File & PUSH TO Book Service"
 
+@app.route("/download/<string:flname>")
+def download(flname):
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=flname, as_attachment=True)
 
 @app.route('/receivedata', methods=['GET', 'POST'])
 def receive_data():
@@ -64,24 +67,8 @@ def receive_data():
     for i in range(0,len(data)):
         data[i] = json.loads(data[i])
     flnm = yamlGenerator(bktit[0], data)
-
     subprocess.run('bookmanager /opt/project/bookmanager-service/books/booksgenerated/nai_test.yaml get', shell = True)
-    subprocess.run('bookmanager /opt/project/bookmanager-service/books/booksgenerated/nai_test.yaml pdf', shell=True)
-    #link = r'/opt/project/bookmanager-service/dest/' +  flnm
-    #file = open(link, 'rb')
-    #returnfile = file.read()
-    #file.close()
-    #return Response(returnfile,
-    #                mimetype="application/xhtml+xml",
-    #                headers={"Content-disposition":
-    #                             "attachment; filename=tst.epub"})
-
-    #application/epub+zip
-    #print(link)
-    #return send_file(app.config['DEST'] +  'book.html', attachment_filename = flnm, as_attachment=True)#mimetype ="application/epub" )
-    return send_from_directory(directory = app.config['DEST'], filename = "book.html", as_attachment=True)#, mimetype ="application/epub+zip")
-    #return render_template(app.config['DEST'] +  'book.html')
-
+    return render_template('linktobook.html', data = flnm)
 
 if __name__ == '__main__':
     app.run(debug=True)
