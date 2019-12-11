@@ -66,7 +66,7 @@ def receive_data():
     #print(bktit)
     flnm = yamlGenerator(bktit[0], data)
     subprocess.run('bookmanager /opt/project/bookmanager-service/books/booksgenerated/nai_test.yaml get', shell = True)
-    #link = r"/opt/project/bookmanager-service/dest/" +  flnm +
+    #link = r"/opt/project/bookmangager-service/dest/" +  flnm +
     return render_template("linktobook.html", data=link)
 
 
