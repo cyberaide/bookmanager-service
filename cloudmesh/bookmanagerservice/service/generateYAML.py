@@ -15,7 +15,6 @@ import getdata
 def yamlGenerator(bookTitle, data):
     bks = getdata.getBooks(onlybooks=True)
     tstbk = bookTitle.strip()
-    print(bks)
     bkinfo = getdata.getBooks(onlybooks=False, filename=bks[tstbk])
 
     # All Data
