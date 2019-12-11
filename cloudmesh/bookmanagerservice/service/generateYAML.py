@@ -5,6 +5,7 @@ from collections import OrderedDict
 from pathlib import Path
 import sys
 import re
+import hashlib
 
 p = Path('.') / 'cloudmesh' / 'bookmanagerservice' / 'service'
 sys.path.append(str(p.absolute()))
@@ -59,12 +60,22 @@ def yamlGenerator(bookTitle, data):
     mystr = yaml.dump(yaml.load(json.dumps(temp2), Loader=yaml.SafeLoader), default_flow_style=False)
     mystr = re.sub(r'([\n])  ([A-Z])', r'\n- \2', mystr)
 
-    # print(mystr)
-    bookTitle = metadata['title']
-    with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
-        f.write(mystr)
+    hash_object = hashlib.md5(mystr.encode())
+    hex_dig = hash_object.hexdigest()
 
-    return filenm
+    # print(mystr)
+
+   # with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
+   #     f.write(mystr)
+
+    #return filenm
+
+    with open('books/booksgenerated/' + str(hex_dig) + '.yaml', 'w+') as f:
+        f.write(mystr)
+    return filenm,hex_dig
+
+
+
 
 
 def rec(data, vals):
