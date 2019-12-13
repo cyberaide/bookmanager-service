@@ -18,12 +18,12 @@ endef
 endif
 ifeq ($(UNAME),Linux)
 define terminal
-	echo "Linux not yet supported, fix me"
+	echo "Linux is not yet supported, fix me"
 endef
 endif
 ifeq ($(UNAME),Windows)
 define terminal
-	echo "Windows not yet supported, fix me"
+	echo "Windows is not yet supported, fix me"
 endef
 endif
 
@@ -35,6 +35,7 @@ doc:
 	cd paper; make
 
 view:
+	# opening bookmanager
 	open -a skim docs/vonLaszewski-bookmanager.pdf
 
 setup:
@@ -93,9 +94,11 @@ install:
 
 
 twine:
+	# installing twine
 	pip install -U twine
 
 dist:
+	# setting up wheel
 	python setup.py sdist bdist_wheel
 	twine check dist/*
 
