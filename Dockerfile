@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 #
 # UPDATE THE SYSTEM
-#
+# required
 RUN apt-get -y update
 RUN apt-get -y dist-upgrade
 RUN apt-get install -y --no-install-recommends apt-utils
@@ -17,7 +17,7 @@ RUN apt-get update --fix-missing
 
 #
 # DEVELOPMENT TOOLS
-#
+# required (although can get by without some like graphviz)
 RUN apt-get install -y graphviz
 RUN apt-get install -y wget
 RUN apt-get install -y curl
@@ -40,7 +40,7 @@ RUN apt-get install -y lsb-core
 
 #
 # INSTALL PYTHON 3.7 FROM SOURCE
-#
+# required
 
 WORKDIR /usr/src
 
@@ -75,7 +75,7 @@ WORKDIR /tmp
 
 #
 # INSTALL PANDOC
-#
+# If using pandoc
 RUN wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb
 RUN dpkg -i pandoc-2.7.3-1-amd64.deb
 RUN pandoc --version
