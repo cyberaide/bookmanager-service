@@ -20,24 +20,19 @@
                                    <li> {{ j }} </li>
                                {% endfor %}
                            </ul>
-
                        </li>
                        {% endfor %}
                    {% endfor %}
                </ul>
            </div>
        </div>
-
        <div class="w3-container w3-padding-32">
            <button onclick=submit() class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
        </div>
-
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js" defer ></script>
          <script >
               $(function () {
-
                 $("#plugins1").jstree({
                 "checkbox" : {
                   "keep_selected_style" : false,
@@ -47,13 +42,9 @@
                 "core" : {
                   "check_callback" : true
                 },
-
                 "plugins" : [ "checkbox", "dnd" ]
               });
-
-
                 });
-
                function submit() {
                 var data =  $('#plugins1').jstree('get_selected', true);
                 var name = []
@@ -69,16 +60,10 @@
                 data:  {x : name},
                 success : function(){},
                 success:function(response){
-
                     document.write(response)
                 }
             });
                 };
-
-
-
-
-
           </script>
 {% endblock %}
   </body>
