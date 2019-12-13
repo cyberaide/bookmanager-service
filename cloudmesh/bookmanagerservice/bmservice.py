@@ -11,8 +11,6 @@ def bmservice():
     print(final)
     subprocess.run(final, shell = True)
 
-
 if __name__ is "__main__":
     bmservice()
-
-
+    
