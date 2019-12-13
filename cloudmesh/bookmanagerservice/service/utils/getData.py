@@ -10,7 +10,6 @@ def getBooks():
     for f in LoF:
         lst.append(Converter.gettitle(Converter(), f))
 
-
     random_list = ['Book1', 'Book2', 'Book3', 'Book4', 'Book5', 'Book6', 'Book7', 'Book8']
 
     return lst
