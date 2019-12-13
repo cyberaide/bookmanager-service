@@ -26,4 +26,4 @@ docker build -t bigdata:v1 .
 python bmservice.py
 ```
 
-6. Navigate to http://localhost:5000/ or the displayed link
+6. Finally, navigate to http://localhost:5000/ or the displayed link.
