@@ -5,7 +5,6 @@ os.chdir('bookmanager-service')
 sys.path.append(os.getcwd() + '\\cloudmesh\\bookmanagerservice\\service')
 import getdata
 
-
 bks = getdata.getBooks(onlybooks=True)
 tstbk = list(bks.keys())[1]
 bkinfo = getdata.getBooks(onlybooks = False, filename = bks[tstbk])
