@@ -1,7 +1,6 @@
 import yaml
 import requests
 
-
 class Converter(object):
 
     def __init__(self):
@@ -132,8 +131,6 @@ class Converter(object):
                 self.toc = self.toc.replace("}',", "},")
                 self.toc = self.toc.replace("}']}", "}]}")
                 self.toc = self.toc.replace(": ['{", ": [{")
-
-
                 self.toc = eval(self.toc)
                 self.book[self.book_title_string] = self.toc
             except yaml.YAMLError:
