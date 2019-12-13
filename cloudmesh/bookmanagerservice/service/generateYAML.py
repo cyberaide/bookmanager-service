@@ -12,7 +12,6 @@ sys.path.append(str(p.absolute()))
 from nested_lookup import get_all_keys
 import getdata
 
-
 def yamlGenerator(bookTitle, data):
     bks = getdata.getBooks(onlybooks=True)
     tstbk = bookTitle.strip()
@@ -74,10 +73,6 @@ def yamlGenerator(bookTitle, data):
         f.write(mystr)
     return filenm,hex_dig
 
-
-
-
-
 def rec(data, vals):
     lst2 = []
     for v in vals:
@@ -92,7 +87,6 @@ def rec(data, vals):
             lst2.append(v)
     return lst2
 
-
 # convert names in temp to links
 def unpack(content):
     nList = []
@@ -103,4 +97,3 @@ def unpack(content):
             else:
                 nList.append(value)
     return nList
-
