@@ -10,14 +10,11 @@ import json
 import getdata
 from generateYAML import yamlGenerator
 
-
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/opt/project/bookmanager-service/dest/'
 app.config['BOOKS_FOLDER'] = '/opt/project/bookmanager-service/books/booksgenerated/'
 Misaka(app, fenced_code=True, highlight=True)
 bks = getdata.getBooks(onlybooks=True)
-
-
 
 @app.route('/')
 @app.route('/index')
@@ -33,7 +30,6 @@ def about():
         aboutcontent = f.read()
     return render_template("about.html", text=aboutcontent)
 
-
 @app.route("/manual")
 def manual():
     manualcontent = ""
@@ -41,13 +37,11 @@ def manual():
         manualcontent = f.read()
     return render_template("about.html", text=manualcontent)
 
-
 @app.route("/chapterselection/<string:book>")
 def chapterselection(book):
     bkinfo = getdata.getBooks(onlybooks = False, filename = bks[book])
     toc = bkinfo[book]
     return render_template("chapterselection2.html", files=[toc,str(book)])
-
 
 @app.route("/genyaml")
 def genyaml():
@@ -75,7 +69,6 @@ def receive_data():
         st = "dest/" + flnm
         ed = "dest/" + hex + ".epub"
         os.rename(st, ed)
-
 
     return render_template('linktobook.html', data = hex + ".epub")
 
