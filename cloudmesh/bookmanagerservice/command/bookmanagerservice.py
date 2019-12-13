@@ -13,14 +13,12 @@ class BookmanagerserviceCommand(PluginCommand):
     def do_bookmanagerservice(self, args, arguments):
         """
         ::
-
           Usage:
                 bookmanagerservice start
                 bookmanagerservice stop
                 bookmanagerservice status
 
           This command manages the bookmanager service.
-
 
           Options:
               -h      help
