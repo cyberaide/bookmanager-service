@@ -99,7 +99,7 @@ mobile devices, so you can peruse course materials at will as part of your onlin
 
 We have a tool called "cyberaide bookmanager"
 [@pypi-las-bookmanager][@github-las-bookmanager] that can create books
-based on markdown files that are then distributed online in Github (it is not only
+based on markdown files that are then distributed online in Github (it's not only
 for data science and cloud computing, but that is where we have most of the
 material).
 
@@ -401,7 +401,6 @@ BOOK:
     - "{git.book}/prg/python/fingerprint/fingerprint.md"
     - "{git.book}/prg/python/facedetection/facedetection.md"
 ```
-
 
 
 ## Creation of the PDF
