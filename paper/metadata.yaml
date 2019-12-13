@@ -24,7 +24,7 @@ lang: en
 babel-lang: english
 abstract: |
 
-  |As the needs of online students rapidly change today, we propose a novel new method for their curriculum needs- 
+  |As the needs of online students rapidly change today, we propose a novel new method for their curriculum necessities- 
   |an online Bookmanager service that allows them to customize their learning process. Through a drag and drop Flask model
   |of book chapters that is hosted on a webservice provider, we allow students to organize their learning as best fits their needs. 
 
