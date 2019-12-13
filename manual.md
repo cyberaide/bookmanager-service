@@ -19,7 +19,7 @@
    * Windows 10 Pro or Edu: Under shared drives please make sure your 
      local drives are checked
    * <img src="https://docs.docker.com/docker-for-windows/images/settings-shared-drives.png" alt="alt text" width="500" height="400">
-   * Mac: Under file sharing please make sure your local drives are added. 
+   * Mac: Under file sharing please make sure your local drives are added 
    * <img src="https://docs.docker.com/v17.12/docker-for-mac/images/menu/d4m-menu-prefs-fileshare.png" alt="alt text" width="500" height="400">
   
 3. For Windows users, if you do not have Git you will need to install it 
@@ -45,7 +45,7 @@
 
 ## Integration with Docusaurus 
 
-To get bookmanager working through docusaurus. First run
+To get bookmanager working through docusaurus. First run:
 
 ```bash
 cd to the directory of your local repository.
@@ -132,7 +132,7 @@ is successfully created before running the next step.
 
 Replace all necessary items like 'USERNAME' with your username.
 
-Now run 
+Now run: 
 
 ```
 GIT_USER=USERNAME CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages # SSH
