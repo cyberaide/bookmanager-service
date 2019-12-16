@@ -1,0 +1,29 @@
+metadata:
+  image: cover.png
+  title: Big Data Applications
+  subtitle: e534
+  author: 'Geoffrey C. Fox
+
+    Gregor von Laszewski'
+  subauthor: ''
+  email: laszewski@gmail.com
+  url: https://cloudmesh-community.github.io/book/vonlaszewski-big-data-applications.epub
+  description: Proposed Lecture content (subject to change)
+  abstract: Proposed Lecture content (subject to change)
+  keywords: Cloud, virtual machines, containers, cloud engineering
+  stylesheet: epub.css
+  dest: ./dest/book
+  filename: vonLaszewski-big-data-applications.epub
+  rights: (c) Indiana University, Gregor von Laszewski, Geoffrey Fox, 2018, 2019
+BOOK:
+- PREFACE:
+  - PREFACE_ePub_Readers
+  - PREFACE_Notation_{sec:notation}
+- ORGANIZATION:
+  - ORGANIZATIONOrganization
+  - ORGANIZATION_Plagiarism
+  - ORGANIZATION_Course_Policies
+  - ORGANIZATION_Course_Description
+  - ORGANIZATION_Example_Artifacts
+  - ORGANIZATIONDatasets
+  - ORGANIZATION_Assignments

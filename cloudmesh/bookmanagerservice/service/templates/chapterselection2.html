@@ -4,7 +4,6 @@
     <meta charset="utf-8">
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-
       <script>
 
 
@@ -48,8 +47,40 @@
         }
     });
         };
-
+	function loading() {
+        var x = document.getElementById("loader");
+        x.style.visibility = "visible";
+   };
         </script>
+		
+		<style>
+      @keyframes spinner {
+      0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+      }
+      100% {
+      transform: translate3d(-50%, -50%, 0) rotate(360deg);
+      }
+      }
+      .spin::before {
+      animation: 1.5s linear infinite spinner;
+      animation-play-state: inherit;
+      border: solid 5px #cfd0d1;
+      border-bottom-color: #1c87c9;
+      border-radius: 50%;
+      content: "";
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      will-change: transform;
+      }
+	  #loader{
+		visibility: hidden;
+	  }
+    </style>
 
   </head>
   <body>
@@ -65,8 +96,9 @@
        </div>
 
        <div class="w3-container w3-padding-32">
-           <button onclick=submit() class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
+           <button onclick="submit(); loading();" class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
        </div>
+	   <div class="spin" id="loader"></div>
    {% endblock %}
 
   </body>
