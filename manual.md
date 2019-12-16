@@ -43,7 +43,16 @@
 
 6. Finally, navigate to http://localhost:5000/ or the displayed link to make sure the service works
 
-## Integration with Docusaurus 
+## How to get Bookmanager to run with MkDocs
+
+Project Pages sites are simpler as the site files get deployed to a branch within the project repository (gh-pages by default). After you checkout the primary working branch (usually master) of the git repository where you maintain the source documentation for your project, run the following command:
+
+mkdocs gh-deploy
+That's it! Behind the scenes, MkDocs will build your docs and use the ghp-import tool to commit them to the gh-pages branch and push the gh-pages branch to GitHub.
+
+Use mkdocs gh-deploy --help to get a full list of options available for the gh-deploy command.
+
+Be aware that you will not be able to review the built site before it is pushed to GitHub. Therefore, you may want to verify any changes you make to the docs beforehand by using the build or serve commands and reviewing the built files locally.
 
 To get bookmanager working through docusaurus. First run:
 
@@ -143,6 +152,6 @@ Now you can see bookmanager on github at https://github.com/USERNAME/bookmanager
 
 ## References: 
 
-* <https://docusaurus.io/docs/en/tutorial-create-new-site>
+* <https://www.mkdocs.org/#getting-started>
 
-* <https://www.modelplusmodel.com/plugins/bookmanager.html>
+* <https://www.mkdocs.org/user-guide/deploying-your-docs/>
