@@ -42,7 +42,7 @@ most material).
    the container 'pandoc' that supports these formats).
 
 
-## Requirement
+## Requirements
 
 Obviously, you need to have some Javascript/HTML/Webpage experience.
 These days almost all students have them so I think that is doable. I
