@@ -45,110 +45,17 @@
 
 ## How to get Bookmanager to run with MkDocs
 
-Project Pages sites are simpler as the site files get deployed to a branch within the project repository (gh-pages by default). After you checkout the primary working branch (usually master) of the git repository where you maintain the source documentation for your project, run the following command:
+The site files for bookmanager are within the project repository (gh-pages by default, but in ours they're located in ```site```). 
 
-mkdocs gh-deploy
-That's it! Behind the scenes, MkDocs will build your docs and use the ghp-import tool to commit them to the gh-pages branch and push the gh-pages branch to GitHub.
+First perform the command of ```git-checkout``` on the main working branch (master) of the git repository where the source documentation is for your project, and then run the following command:
 
-Use mkdocs gh-deploy --help to get a full list of options available for the gh-deploy command.
+```mkdocs gh-deploy```
 
-Be aware that you will not be able to review the built site before it is pushed to GitHub. Therefore, you may want to verify any changes you make to the docs beforehand by using the build or serve commands and reviewing the built files locally.
+You've done it! Now unseen, MkDocs will build the docs and use ```ghp-import``` to commit to the ```gh-pages``` branch, then pushing the ```gh-pages``` branch out to GitHub.
 
-To get bookmanager working through docusaurus. First run:
+Use ```mkdocs gh-deploy --help``` to get more options for the ```gh-deploy``` command.
 
-```bash
-cd to the directory of your local repository.
-cd docusaurus-tutorial
-```
-
-Then, enter the ```docusaurus-init``` command in the terminal.
-
-```bash
-docusaurus-init
-```
-
-This might take some time. Be patient.
-
-Here's an example directory that will be created. Some example
-documentation pages (under docs) and blog posts (under website/blog) are
-included.
-
-```
-├── Dockerfile
-├── docker-compose.yml
-├── docs
-│   ├── doc1.md
-│   ├── exampledoc4.md
-└── website
-       ├── siteConfig.js
-       └── yarn.lock
-```
-
-Next, run ```cd website``` to go in the ```website``` directory.
-Then run ```npm start```. ```yarn start``` works as well.
-
-A new browser window opens up at http://localhost:3000.
-
-Hooray! We now have an HTML site. Now it's time to run some other commands.
-
-### Adding Pages
-
-We first need a documentation page. In the docs folder make a file and
-name it whatever you like (we chose TRex1.md). This will be in the root
-section of the Docusaurus site.
-
-Here is what the first page/file should look like:
-
-```
-const React = require('react');
-
-const CompLibrary = require('../../core/CompLibrary.js');
-
-const Container = CompLibrary.Container;
-const GridBlock = CompLibrary.GridBlock;
-
-function NewDoc(props) {
-  return (
-    <div className="docMainWrapper wrapper">
-      <Container className="mainContainer documentContainer postContainer">
-        <Your text here>
-      </Container>
-    </div>
-  );
-}
-module.exports = NewDoc;
-```
-
-Next, pull up the file the file
-`docusaurus-tutorial/website/siteConfig.js` and place the values below in
-there.
-
-```
-const siteConfig = {
-  ...
-  url: 'https://USERNAME.github.io', // Replace USERNAME with your GitHub username.
-  baseUrl: '/bookmanager-service/', // The name of the bookmanager service
-  projectName: 'bookmanager-service',  // The name of the bookmanager service. Same as above.
-  ...
-}
-```
-
-In the website directory, run ```npm run build``` or ```yarn build```.
-The command generates a build directory inside the website directory,
-containing HTML files (and other file types) for all of your docs and
-other pages. Make sure the docusaurus-tutorial/website/build directory
-is successfully created before running the next step.
-
-Replace all necessary items like 'USERNAME' with your username.
-
-Now run: 
-
-```
-GIT_USER=USERNAME CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages # SSH
-```
-
-Now you can see bookmanager on github at https://github.com/USERNAME/bookmanager!
-
+Note: You can't review the built site right as it's pushed out to GitHub. So you might want to verify made changes to the docs first through using the ```build``` or ```serve``` commands and then reviewing the built files perhaps locally.
 
 ## References: 
 
