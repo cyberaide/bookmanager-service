@@ -7,13 +7,14 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_misaka import Misaka
 import json
 
+#
+# why can we not use pip instead of sys.path ....?????
+#
 sys.path.append(dirname(__file__))
 import getdata
 from generateYAML import yamlGenerator
 
-#
-# why can we not use pip instead of sys.path ....?????
-#
+
 
 
 app = Flask(__name__)
