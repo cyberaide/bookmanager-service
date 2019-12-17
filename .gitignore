@@ -1,4 +1,5 @@
 dest
+/books/booksgenerated
 Makefile
 *.pye
 .idea
