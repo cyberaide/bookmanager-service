@@ -3,6 +3,10 @@ import os
 
 os.chdir('bookmanager-service')
 
+#
+# this is a BUG: use Path and pathlib, also this can be installed with pip so all
+# the syspath management isi questionable
+#
 sys.path.append(os.getcwd() + '\\cloudmesh\\bookmanagerservice\\service')
 import getdata
 

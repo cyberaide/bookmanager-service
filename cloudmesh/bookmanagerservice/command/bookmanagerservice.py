@@ -1,10 +1,8 @@
 from __future__ import print_function
-from cloudmesh.shell.command import command
-from cloudmesh.shell.command import PluginCommand
-from cloudmesh.common.console import Console
-from cloudmesh.common.util import path_expand
-from pprint import pprint
+
 from cloudmesh.common.debug import VERBOSE
+from cloudmesh.shell.command import PluginCommand
+from cloudmesh.shell.command import command
 
 
 class BookmanagerserviceCommand(PluginCommand):

@@ -9,6 +9,9 @@ import json
 import getdata
 from generateYAML import yamlGenerator
 
+#
+# why can we not use pip instead of sys.path ....?????
+#
 sys.path.append(dirname(__file__))
 
 app = Flask(__name__)

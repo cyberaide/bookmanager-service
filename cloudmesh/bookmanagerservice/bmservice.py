@@ -1,6 +1,12 @@
 import subprocess
 from pathlib import Path
 
+#
+# sshoudl that not be integrated into
+#
+# bbookmanagerserice.command.bookmanagerservice.
+# than we can use cms bookmanagerservice ....?
+#
 
 def bmservice():
     p = str(Path('.').absolute())
