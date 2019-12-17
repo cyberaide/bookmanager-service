@@ -38,7 +38,8 @@
 
    ```bash 
    docker build -t bigdata:v1 .
-   python bmservice.py
+   pip install -e . 
+   bookmanager-service
    ```
 
 6. Finally, navigate to http://localhost:5000/ or the displayed link to make sure the service works
