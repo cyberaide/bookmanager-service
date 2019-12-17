@@ -1,6 +1,7 @@
 import yaml
 import requests
 
+
 class Converter(object):
 
     def __init__(self):
@@ -41,10 +42,12 @@ class Converter(object):
                     phrase = "{github." + item + "}"
                     for i in range(len(self.toc)):
                         if isinstance(self.toc[i], dict):
-                            values = self.toc[i].get(list(self.toc[i].keys())[0])
+                            values = self.toc[i].get(
+                                list(self.toc[i].keys())[0])
                             values = self.unpack(values)
                             for j in range(len(values)):
-                                values[j] = values[j].replace(phrase, github[item])
+                                values[j] = values[j].replace(phrase,
+                                                              github[item])
 
                             newd = {list(self.toc[i].keys())[0]: values}
                             self.toc[i] = newd
@@ -93,74 +96,93 @@ class Converter(object):
                             break;
                         if line[0] == '#':
                             title = line.split(" ", 1)
-<<<<<<< HEAD:cloudmesh/bookmanagerservice/converter.py
-                            newTitle = title[1].split(" ")
-                            newTempTitle = ""
-                            for item in newTitle:
-                                if item.isalpha():
-                                    newTempTitle += item + " "
-                            data1.append({link: newTempTitle})
-=======
-                            # print(title[1])
-                            data1.append({link: title[1]})
->>>>>>> Updated YAML selection and JSTree Implementation Based on Professors Suggestion:cloudmesh/bookmanagerservice/service/converter.py
 
-                        elif line[0] in ["=", '-', "^", "~"]:
-                            line = previous
-                            title = line.split(" ", 1)
-                            if len(title) < 2:
-                                data1.append({link: newTempTitle})
-                                break;
-                            else:
-                                newTitle = title[1].split(" ")
-                                newTempTitle = ""
-                                for item in newTitle:
-                                    if item.isalpha():
-                                        newTempTitle += item + " "
-                                data1.append({link: newTempTitle})
-                                break;
-                        previous = line
-                self.toc = str(self.toc)
-                for item in data1:
-                    for key in item.keys():
-                        if key in self.toc:
-                            c = str(item)
-                            self.toc = self.toc.replace(key, c)
+<< << << < HEAD: cloudmesh / bookmanagerservice / converter.py
+newTitle = title[1].split(" ")
+newTempTitle = ""
+for item in newTitle:
+    if item.isalpha():
+        newTempTitle += item + " "
+data1.append({link: newTempTitle})
+== == == =
+# print(title[1])
+data1.append({link: title[1]})
+>> >> >> > Updated
+YAML
+selection and JSTree
+Implementation
+Based
+on
+Professors
+Suggestion: cloudmesh / bookmanagerservice / service / converter.py
 
-                self.toc = self.toc.replace(", '{", ",{")
-                self.toc = self.toc.replace("}',", "},")
-                self.toc = self.toc.replace("}']}", "}]}")
-                self.toc = self.toc.replace(": ['{", ": [{")
-                self.toc = eval(self.toc)
-                self.book[self.book_title_string] = self.toc
-            except yaml.YAMLError:
-                print(yaml.YAMLError)
+elif line[0] in ["=", '-', "^", "~"]:
+line = previous
+title = line.split(" ", 1)
+if len(title) < 2:
+    data1.append({link: newTempTitle})
+    break;
+else:
+    newTitle = title[1].split(" ")
+    newTempTitle = ""
+    for item in newTitle:
+        if item.isalpha():
+            newTempTitle += item + " "
+    data1.append({link: newTempTitle})
+    break;
+previous = line
+self.toc = str(self.toc)
+for item in data1:
+    for key in item.keys():
+        if key in self.toc:
+            c = str(item)
+            self.toc = self.toc.replace(key, c)
 
-            return self
+self.toc = self.toc.replace(", '{", ",{")
+self.toc = self.toc.replace("}',", "},")
+self.toc = self.toc.replace("}']}", "}]}")
+self.toc = self.toc.replace(": ['{", ": [{")
+self.toc = eval(self.toc)
+self.book[self.book_title_string] = self.toc
+except yaml.YAMLError:
+print(yaml.YAMLError)
 
-    def unpack(self, content):
-        nList = []
-        for item in content:
-<<<<<<< HEAD:cloudmesh/bookmanagerservice/converter.py
-=======
-            # print(item)
->>>>>>> Updated YAML selection and JSTree Implementation Based on Professors Suggestion:cloudmesh/bookmanagerservice/service/converter.py
-            if isinstance(item, dict):
-                nList += (self.unpack(list(item.values())[0]))
-            else:
-                nList.append(item)
-        return nList
+return self
 
-    def getBook(self):
-        return self.book
 
-    def fetch(self, url):
+def unpack(self, content):
+    nList = []
+    for item in content:
 
-        request = requests.get(url)
-        content = request.text.split('\n')
+<< << << < HEAD: cloudmesh / bookmanagerservice / converter.py
+== == == =
+# print(item)
+>> >> >> > Updated
+YAML
+selection and JSTree
+Implementation
+Based
+on
+Professors
+Suggestion: cloudmesh / bookmanagerservice / service / converter.py
+if isinstance(item, dict):
+    nList += (self.unpack(list(item.values())[0]))
+else:
+    nList.append(item)
+return nList
 
-        return content[0]
-<<<<<<< HEAD:cloudmesh/bookmanagerservice/converter.py
+
+def getBook(self):
+    return self.book
+
+
+def fetch(self, url):
+    request = requests.get(url)
+    content = request.text.split('\n')
+
+    return content[0]
+
+<< << << < HEAD: cloudmesh / bookmanagerservice / converter.py
 
 ## change path if needed
 os.chdir('..')
@@ -171,11 +193,18 @@ path = Path('.')
 LoF = list(path.glob('*.yaml'))
 
 for f in LoF:
-   source = f
-   #destination = f.replace('.yaml', '.json')
-   i = Converter()
-   Converter.convert(i, source)
-   print(i.getBook())
+    source = f
+    # destination = f.replace('.yaml', '.json')
+    i = Converter()
+    Converter.convert(i, source)
+    print(i.getBook())
 
-=======
->>>>>>> Updated YAML selection and JSTree Implementation Based on Professors Suggestion:cloudmesh/bookmanagerservice/service/converter.py
+== == == =
+>> >> >> > Updated
+YAML
+selection and JSTree
+Implementation
+Based
+on
+Professors
+Suggestion: cloudmesh / bookmanagerservice / service / converter.py

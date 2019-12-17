@@ -1,19 +1,22 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
- <head>
-   <meta charset="utf-8">
-   <title>Flask Parent Template</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
-     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
- </head>
- <body>
-     <nav class="w3-bar w3-blue">
-         <a href="{{ url_for('home') }}" class="w3-button w3-bar-item">Bookmanager Service</a>
-         <a href="{{ url_for('about') }}" class="w3-button w3-bar-item">About</a>
-            <a href="{{ url_for('manual') }}" class="w3-button w3-bar-item">Instructions</a>
-     </nav>
-     {% block content %}
-      {% endblock %}
+<head>
+    <meta charset="utf-8">
+    <title>Flask Parent Template</title>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+<nav class="w3-bar w3-blue">
+    <a href="{{ url_for('home') }}" class="w3-button w3-bar-item">Bookmanager
+        Service</a>
+    <a href="{{ url_for('about') }}" class="w3-button w3-bar-item">About</a>
+    <a href="{{ url_for('manual') }}"
+       class="w3-button w3-bar-item">Instructions</a>
+</nav>
+{% block content %}
+{% endblock %}
 
- </body>
+</body>
 </html>

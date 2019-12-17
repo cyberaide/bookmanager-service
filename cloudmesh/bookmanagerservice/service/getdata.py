@@ -4,6 +4,7 @@ import glob
 from pathlib import Path
 from pprint import pprint
 
+
 def rec(dat, k=None, idx=None):
     if isinstance(dat, str):
         if str(k) == 'None':
@@ -21,12 +22,13 @@ def rec(dat, k=None, idx=None):
         link = rq.get(dat)
         link.encoding = 'utf-8-sig'
         try:
-            link = [line for line in link.text.replace("#", '').split('\n') if line.strip() != ''][0]
+            link = [line for line in link.text.replace("#", '').split('\n') if
+                    line.strip() != ''][0]
         except IndexError:
             link = "Empty"
 
         if link != "404: Not Found":
-            #print({'id': k + link.replace(" ", "_"), 'parent': k, 'text': link})
+            # print({'id': k + link.replace(" ", "_"), 'parent': k, 'text': link})
             lenk = k.split("/")
             if len(lenk) > 0:
                 for x in range(len(lenk)):
@@ -44,10 +46,13 @@ def rec(dat, k=None, idx=None):
                 if {'id': k, 'parent': '#', 'text': k} not in final:
                     final.append({'id': k, 'parent': '#', 'text': k})
                     links.append('')
-            final.append({'id': k + link.replace(" ", "_"), 'parent': k, 'text': link})
+            final.append(
+                {'id': k + link.replace(" ", "_"), 'parent': k, 'text': link})
             links.append(dat)
         else:
-            errors.append({'id': k + link.replace(" ", "_"), 'parent': k, 'text': link, "link": dat})
+            errors.append(
+                {'id': k + link.replace(" ", "_"), 'parent': k, 'text': link,
+                 "link": dat})
     elif isinstance(dat, dict):
         for j, value in dat.items():
             if str(k) == 'None':
@@ -63,8 +68,7 @@ def rec(dat, k=None, idx=None):
     return final
 
 
-
-def getBooks(onlybooks = False, filename = ""):
+def getBooks(onlybooks=False, filename=""):
     bks = {}
     if onlybooks:
         files = glob.glob("books/*.yaml")
@@ -84,7 +88,7 @@ def getBooks(onlybooks = False, filename = ""):
         global links
         links = []
         global errors
-        errors =  []
+        errors = []
         tst = YAML(typ='safe')
         dat = tst.load(Path(f))
         global dat2
@@ -94,7 +98,8 @@ def getBooks(onlybooks = False, filename = ""):
         global fullLink
         fullLink = dat['github']
         rec(dat2)
-        bks[title] = {'file': f, 'data': final, 'links': links, 'metadata' : dat['metadata']}
-        #print("The Broken Links Are")
-        #pprint(errors)
+        bks[title] = {'file': f, 'data': final, 'links': links,
+                      'metadata': dat['metadata']}
+        # print("The Broken Links Are")
+        # pprint(errors)
         return bks

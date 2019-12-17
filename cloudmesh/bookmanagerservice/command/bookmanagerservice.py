@@ -6,6 +6,7 @@ from cloudmesh.common.util import path_expand
 from pprint import pprint
 from cloudmesh.common.debug import VERBOSE
 
+
 class BookmanagerserviceCommand(PluginCommand):
 
     # noinspection PyUnusedLocal

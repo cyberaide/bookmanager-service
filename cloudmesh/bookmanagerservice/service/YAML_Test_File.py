@@ -1,5 +1,6 @@
 import sys
 import os
+
 os.chdir('bookmanager-service')
 
 sys.path.append(os.getcwd() + '\\cloudmesh\\bookmanagerservice\\service')
@@ -7,17 +8,19 @@ import getdata
 
 bks = getdata.getBooks(onlybooks=True)
 tstbk = list(bks.keys())[1]
-bkinfo = getdata.getBooks(onlybooks = False, filename = bks[tstbk])
+bkinfo = getdata.getBooks(onlybooks=False, filename=bks[tstbk])
 
-#All Data
+# All Data
 data = bkinfo[tstbk]['data']
 links = bkinfo[tstbk]['links']
 metadata = bkinfo[tstbk]['metadata']
 
-#Data to generate book
-#The book should be heading Preface, with the remaining 3 under it
-id = ['PREFACE','MAPREDUCE/HADOOP_ECOSYSTEM/TWISTER_Twister2_Installation','REST'
-	,'REST/REST_WITH_EVE','CONTAINER/DOCKER_PAAS_Docker_and_Docker_Swarm_on_FutureSystems']
+# Data to generate book
+# The book should be heading Preface, with the remaining 3 under it
+id = ['PREFACE', 'MAPREDUCE/HADOOP_ECOSYSTEM/TWISTER_Twister2_Installation',
+      'REST'
+    , 'REST/REST_WITH_EVE',
+      'CONTAINER/DOCKER_PAAS_Docker_and_Docker_Swarm_on_FutureSystems']
 
 """
 this should be the structure of this YAML FILE
@@ -48,6 +51,6 @@ REST:
   CONTAINER:
      DOCKER_PAAS_Docker_and_Docker_Swarm_on_FutureSystems  #The last layes should alwasy be links
 """
-	
+
 print(len(data))
 print(len(links))

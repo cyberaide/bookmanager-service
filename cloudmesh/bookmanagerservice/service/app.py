@@ -2,7 +2,6 @@ import sys
 from os.path import dirname
 import os
 import subprocess
-sys.path.append(dirname(__file__))
 
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_misaka import Misaka
@@ -10,11 +9,15 @@ import json
 import getdata
 from generateYAML import yamlGenerator
 
+sys.path.append(dirname(__file__))
+
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = '/opt/project/bookmanager-service/dest/'
-app.config['BOOKS_FOLDER'] = '/opt/project/bookmanager-service/books/booksgenerated/'
+app.config[
+    'BOOKS_FOLDER'] = '/opt/project/bookmanager-service/books/booksgenerated/'
 Misaka(app, fenced_code=True, highlight=True)
 bks = getdata.getBooks(onlybooks=True)
+
 
 @app.route('/')
 @app.route('/index')
@@ -30,6 +33,7 @@ def about():
         aboutcontent = f.read()
     return render_template("about.html", text=aboutcontent)
 
+
 @app.route("/manual")
 def manual():
     manualcontent = ""
@@ -37,40 +41,49 @@ def manual():
         manualcontent = f.read()
     return render_template("about.html", text=manualcontent)
 
+
 @app.route("/chapterselection/<string:book>")
 def chapterselection(book):
-    bkinfo = getdata.getBooks(onlybooks = False, filename = bks[book])
+    bkinfo = getdata.getBooks(onlybooks=False, filename=bks[book])
     toc = bkinfo[book]
-    return render_template("chapterselection2.html", files=[toc,str(book)])
+    return render_template("chapterselection2.html", files=[toc, str(book)])
+
 
 @app.route("/genyaml")
 def genyaml():
     return "Generate YAML File & PUSH TO Book Service"
 
+
 @app.route("/download/<string:flname>")
 def download(flname):
-    return send_from_directory(directory=app.config['UPLOAD_FOLDER'], filename=flname, as_attachment=True, attachment_filename = "book.epub")
+    return send_from_directory(directory=app.config['UPLOAD_FOLDER'],
+                               filename=flname, as_attachment=True,
+                               attachment_filename="book.epub")
+
 
 @app.route('/receivedata', methods=['GET', 'POST'])
 def receive_data():
     data = request.form.getlist("x[]")
     bktit = request.form.getlist("y")
-    for i in range(0,len(data)):
+    for i in range(0, len(data)):
         data[i] = json.loads(data[i])
-    flnm,hex = yamlGenerator(bktit[0], data)
+    flnm, hex = yamlGenerator(bktit[0], data)
 
-    #check if hex is in generated books in dest
+    # check if hex is in generated books in dest
     gg = app.config['UPLOAD_FOLDER'] + hex + '.epub'
     if os.path.exists(gg):
         print("Found")
     else:
         print('File does not exist')
-        subprocess.run("bookmanager " + app.config['BOOKS_FOLDER'] + hex + '.yaml get', shell = True)
+        subprocess.run(
+            "bookmanager " + app.config['BOOKS_FOLDER'] + hex + '.yaml get',
+            shell=True)
         st = "dest/" + flnm
         ed = "dest/" + hex + ".epub"
         os.rename(st, ed)
 
-    return render_template('linktobook.html', data = hex + ".epub")
+    return render_template('linktobook.html', data=hex + ".epub")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

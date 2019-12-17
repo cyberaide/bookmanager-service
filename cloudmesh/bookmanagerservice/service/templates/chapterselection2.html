@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/html">
-  <head>
+<head>
     <meta charset="utf-8">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
-      <script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.1/jquery.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    <script>
 
 
         $(function () {
@@ -51,9 +53,10 @@
         var x = document.getElementById("loader");
         x.style.visibility = "visible";
    };
-        </script>
-		
-		<style>
+
+    </script>
+
+    <style>
       @keyframes spinner {
       0% {
       transform: translate3d(-50%, -50%, 0) rotate(0deg);
@@ -80,26 +83,29 @@
 	  #loader{
 		visibility: hidden;
 	  }
+
     </style>
 
-  </head>
-  <body>
-    {% extends "template.html" %}
-   {% block content %}
-       <div class="w3-container">
-        <h1 class = "bookt"> {{ files[1] }} </h1>
-           <h4 class="logo">Please select the chapters you would like to study</h4>
-       </div>
-       <div class="w3-container w3-padding-16">
-           <div id="plugins1">
-           </div>
-       </div>
+</head>
+<body>
+{% extends "template.html" %}
+{% block content %}
+<div class="w3-container">
+    <h1 class="bookt"> {{ files[1] }} </h1>
+    <h4 class="logo">Please select the chapters you would like to study</h4>
+</div>
+<div class="w3-container w3-padding-16">
+    <div id="plugins1">
+    </div>
+</div>
 
-       <div class="w3-container w3-padding-32">
-           <button onclick="submit(); loading();" class="w3-button w3-block w3-blue" style="width:15%">Generate Book</button>
-       </div>
-	   <div class="spin" id="loader"></div>
-   {% endblock %}
+<div class="w3-container w3-padding-32">
+    <button onclick="submit(); loading();" class="w3-button w3-block w3-blue"
+            style="width:15%">Generate Book
+    </button>
+</div>
+<div class="spin" id="loader"></div>
+{% endblock %}
 
-  </body>
+</body>
 </html>

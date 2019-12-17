@@ -12,6 +12,7 @@ sys.path.append(str(p.absolute()))
 from nested_lookup import get_all_keys
 import getdata
 
+
 def yamlGenerator(bookTitle, data):
     bks = getdata.getBooks(onlybooks=True)
     tstbk = bookTitle.strip()
@@ -22,7 +23,7 @@ def yamlGenerator(bookTitle, data):
     links = bkinfo[tstbk]['links']
     metadata = bkinfo[tstbk]['metadata']
     filenm = metadata['filename']
-    #data = pickle.load(open(bookData, "rb"))
+    # data = pickle.load(open(bookData, "rb"))
 
     final = {}
     for d in data:
@@ -56,7 +57,8 @@ def yamlGenerator(bookTitle, data):
     temp2['BOOK'] = [temp]
     temp2 = temp2
 
-    mystr = yaml.dump(yaml.load(json.dumps(temp2), Loader=yaml.SafeLoader), default_flow_style=False)
+    mystr = yaml.dump(yaml.load(json.dumps(temp2), Loader=yaml.SafeLoader),
+                      default_flow_style=False)
     mystr = re.sub(r'([\n])  ([A-Z])', r'\n- \2', mystr)
 
     hash_object = hashlib.md5(mystr.encode())
@@ -64,14 +66,15 @@ def yamlGenerator(bookTitle, data):
 
     # print(mystr)
 
-   # with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
-   #     f.write(mystr)
+    # with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
+    #     f.write(mystr)
 
-    #return filenm
+    # return filenm
 
     with open('books/booksgenerated/' + str(hex_dig) + '.yaml', 'w+') as f:
         f.write(mystr)
-    return filenm,hex_dig
+    return filenm, hex_dig
+
 
 def rec(data, vals):
     lst2 = []
@@ -86,6 +89,7 @@ def rec(data, vals):
         else:
             lst2.append(v)
     return lst2
+
 
 # convert names in temp to links
 def unpack(content):
