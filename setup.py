@@ -28,8 +28,14 @@ def readfile(filename):
 # add minimum requirements here
 #
 requiers = """
-psutil
-pygments
+flask
+flask-misaka
+PyYAML
+requests
+ruamel.yaml
+nested_lookup
+oyaml
+collections
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']
