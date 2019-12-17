@@ -90,15 +90,7 @@ RUN mv pandoc-crossref /usr/local/bin
 RUN git clone https://github.com/cyberaide/bookmanager.git
 
 WORKDIR /tmp/bookmanager
-
-
 RUN pip install -e .
-RUN pip install Flask
-RUN pip install Flask-Misaka
-RUN pip install ruamel.yaml
-RUN pip install nested_lookup
-RUN pip install oyaml
-
 
 WORKDIR /root
 

@@ -1,5 +1,5 @@
-flask
-flask-misaka
+Flask
+Flask-Misaka
 PyYAML
 requests
 ruamel.yaml

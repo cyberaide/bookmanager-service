@@ -28,8 +28,8 @@ def readfile(filename):
 # add minimum requirements here
 #
 requiers = """
-flask
-flask-misaka
+Flask
+Flask-Misaka
 PyYAML
 requests
 ruamel.yaml
