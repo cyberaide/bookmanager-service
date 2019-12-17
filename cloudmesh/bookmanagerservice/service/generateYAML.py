@@ -7,6 +7,12 @@ import sys
 import re
 import hashlib
 
+#
+# This seems a BUG: pip install should take care of this so
+# we can do propper imports
+#
+# from cloudmesh.bookmanagerservixe.service ....
+#
 p = Path('.') / 'cloudmesh' / 'bookmanagerservice' / 'service'
 sys.path.append(str(p.absolute()))
 from nested_lookup import get_all_keys
