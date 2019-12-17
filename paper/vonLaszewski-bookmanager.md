@@ -5,15 +5,15 @@ acknowledged in many areas of commercial, government, and academic
 endeavors. This is reflected in Indiana University's (IU) activities to
 build its new Intelligent Systems Engineering (ISE) program with a
 strong computational and information technology basis and situate it in
-the School of Informatics, Computing, and Engineering (SICE). As students 
-are changing the curriculum needs to change and integrate modern concepts 
-and practices in a rapid fashion as well. Thus, we must not
-only support the rapid change of course material but also support the
-learning modes of Generation Z. Our work reported here is targeting this
-area, while we have learned from a four-year undergraduate
+the School of Informatics, Computing, and Engineering (SICE). As
+students are changing the curriculum needs to change and integrate
+modern concepts and practices in a rapid fashion as well. Thus, we must
+not only support the rapid change of course material but also support
+the learning modes of Generation Z. Our work reported here is targeting
+this area, while we have learned from a four-year undergraduate
 curriculum designed *ab initio* and taught so far to our first two
-undergraduate classes. We aim to invest it into developing active modules
-that are customized for Cyberinfrastructure Contributors (CIC)
+undergraduate classes. We aim to invest it into developing active
+modules that are customized for Cyberinfrastructure Contributors (CIC)
 communities nucleated, built, and sustained via the dynamic use of
 GitHub. This includes content that targets Cloud Computing, Big Data
 Applications and Analytics, Networking, High-Performance Computing,
@@ -23,63 +23,64 @@ today’s tech-savvy students by incorporating successful
 community-building tools. In particular, for the work described here we
 leverage GitHub repositories to prepare the content and make them
 available on-demand for later learners and educators. This has the
-advantage that via a GitHub-based community model all can
-contribute to the course improving the text, the software, and providing
-a set of examples. We hope in this project to show that we can build
-both learning and sustainability communities by using the proven
-techniques of the open-source software community.
+advantage that via a GitHub-based community model all can contribute to
+the course improving the text, the software, and providing a set of
+examples. We hope in this project to show that we can build both
+learning and sustainability communities by using the proven techniques
+of the open-source software community.
 
 One of the important observations is that today students in classes have
-vastly different backgrounds. What may be common knowledge to one student may not
-be known by others. Thus it is important to be able to customize the learning
-experience not only to participate in a *standard* class, but be able to
-adapt the teaching material for individual students into a *personalized* class.
+vastly different backgrounds. What may be common knowledge to one
+student may not be known by others. Thus it is important to be able to
+customize the learning experience not only to participate in a
+*standard* class, but be able to adapt the teaching material for
+individual students into a *personalized* class.
 
 Thus we are in need of a tool that can customize, for example, the
 creation of material form content located in different GitHub
 repositories. Such a tool has been written by von Laszewski
-[@github-las-bookmanager] and has been in use for over a year. However, this
-tool is command-line based and may not be convenient for beginner
+[@github-las-bookmanager] and has been in use for over a year. However,
+this tool is command-line based and may not be convenient for beginner
 students that are not yet familiar with installing programs on their own
 computers. Therefore this work develops a webserver-hosted framework
-that allows the creation of individualized course material from templates
-and convenient graphical web pages with a table of content to be
-assembled through drag and drop. Moreover, if during the study of the
+that allows the creation of individualized course material from
+templates and convenient graphical web pages with a table of content to
+be assembled through drag and drop. Moreover, if during the study of the
 material it is found that material is missing, it can easily be
 integrated into the individualized course table of contents.
 
 The result of this work is two-fold:
 
 * This service is developed as code and made available at
-   [@github-las-bookmanager-service].
+  [@github-las-bookmanager-service].
 * We will experiment with pacing the
-   service during a test phase online and have students from class
-   evaluate the tool and its features to obtain feedback for improvements.
+  service during a test phase online and have students from class
+  evaluate the tool and its features to obtain feedback for improvements.
 
 
 ## Summary
 
-We have a number of distributed documentation written by
-different groups and organizations and users. Although we can
-put an html link up with the collection, students, researchers and
-tutorial participants benefit from a tool that integrates
-all of them into a single document rather than forcing them into an assembly of multiple
-of links. This allows for a book-like distribution of the
-content written by various authors and hosted on various
-GitHub repositories.
+We have a number of distributed documentation written by different
+groups and organizations and users. Although we can put an html link up
+with the collection, students, researchers and tutorial participants
+benefit from a tool that integrates all of them into a single document
+rather than forcing them into an assembly of multiple of links. This
+allows for a book-like distribution of the content written by various
+authors and hosted on various GitHub repositories.
 
 In our case it also serves as a mechanism for generating class
-proceedings of reports developed by students so they can take
-them “home” after completing class work.
+proceedings of reports developed by students so they can take them
+“home” after completing class work.
 
 ### The solution
 
-For this problem, we have a simple tool called Bookmanager that creates an epub
-of documents specified in a yaml table of contents. The
+For this problem, we have a simple tool called Bookmanager that creates
+an epub of documents specified in a yaml table of contents. The
 documents will be fetched from the url and then the images downloaded
-and an epub generated. This epub (as long as it is not too big) can then be
-browsed not only on your computer, but also on tablets and
-mobile devices, so you can peruse course materials at will as part of your online "book collection".
+and an epub generated. This epub (as long as it is not too big) can then
+be browsed not only on your computer, but also on tablets and mobile
+devices, so you can peruse course materials at will as part of your
+online "book collection".
 
 
 ### Sample yaml file
@@ -97,11 +98,11 @@ mobile devices, so you can peruse course materials at will as part of your onlin
 
 ## Idea
 
-We have a tool called "cyberaide bookmanager"
+We have a tool called *cyberaide bookmanager*
 [@pypi-las-bookmanager][@github-las-bookmanager] that can create books
-based on markdown files that are then distributed online in Github (it's not only
-for data science and cloud computing, but that is where we have most of the
-material).
+based on markdown files that are then distributed online in Github (it's
+not only for data science and cloud computing, but that is where we have
+most of the material).
 
 ## Design Aspects
 
@@ -109,8 +110,9 @@ material).
    place it online on a cloud or web service. (Containerization is easy
    and mostly done for the command line, but not for the HTML/GUI portion)
 
-2. We would like to allow people that visit a web page and select class modules
-   that are then automatically integrated in customized books for that student
+2. We would like to allow people that visit a web page and select class
+   modules that are then automatically integrated in customized books for
+   that student
 
 3. The integration could be as simple as clicking on some chapters in a
    table of content that we distribute
@@ -123,34 +125,35 @@ material).
    inclusion tests if the Markdown is ok while using Markdownlint
    (MDL).
 
-6. Finally, an (optional) extension we woud like to include would be 
-   the ability to switch to different formats, such
-   as PDF, Word, rst, .txt, .org mode (this might be easier as we already use
-   the container Pandoc that supports these formats.)
+6. Finally, an (optional) extension we woud like to include would be the
+   ability to switch to different formats, such as PDF, Word, rst, .txt,
+   .org mode (this might be easier as we already use the container Pandoc
+   that supports these formats.)
 
 
 ## Requirements
 
 Obviously, you need to have some Javascript/HTML/Webpage experience.
-These days almost all students have them so this is doable. We are
-open to suggestions for Javascript framework, but hear Electron
-may be a good choice also so we can host the service in the cloud in addition to 
+These days almost all students have them so this is doable. We are open
+to suggestions for Javascript framework, but hear Electron may be a good
+choice also so we can host the service in the cloud in addition to
 running locally.
 
 Other than a manual and programming the project has a 2 page report
-requirement in markdown not LaTeX. The reason this is so low is that
-you spend more time on programming than writing the report. You should
-think of the report also like a mini manual, so you let the users know
-why it is helpful and how they can use it.
+requirement in markdown not LaTeX. The reason this is so low is that you
+spend more time on programming than writing the report. You should think
+of the report also like a mini manual, so you let the users know why it
+is helpful and how they can use it.
 
 
 ## Bookmanager
 
-Bookmanager is a tool to create a publication from a number of sources on the
-internet. It is especially useful to create customized books, lecture notes, or
-handouts. Content is best integrated in Markdown as this format is able to
-produce the output very quickly. At present we only produce epubs, but it will be easy to
-also create PDF, HTML, Word, ODT and others in the future. As we use Pandoc we can support the
+Bookmanager is a tool to create a publication from a number of sources
+on the internet. It is especially useful to create customized books,
+lecture notes, or handouts. Content is best integrated in Markdown as
+this format is able to produce the output very quickly. At present we
+only produce epubs, but it will be easy to also create PDF, HTML, Word,
+ODT and others in the future. As we use Pandoc we can support the
 formats that are usually used in conjunction.
 
 ### Implemented Features:
@@ -158,8 +161,9 @@ formats that are usually used in conjunction.
 * Table of contents with indentation levels can be specified via YAML
 * Special variable substitution of elements defined in the YAML file
 * Documents are fetched from Github 
-* The documents will be inspected and the images found in them fetched 
-  (we assume the images are related to the document, HTTP links will not be modified)
+* The documents will be inspected and the images found in them fetched
+  (we assume the images are related to the document, HTTP links will not
+  be modified)
 * Automatic generation of a cover page
 * Output is generated in a destination directory
 
