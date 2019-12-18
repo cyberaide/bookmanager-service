@@ -2,31 +2,31 @@ import sys
 from os.path import dirname
 import os
 import subprocess
-
+from cloudmesh.common.Shell import Shell
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from flask_misaka import Misaka
 import json
 
-#
-# why can we not use pip instead of sys.path ....?????
-#
-# sys.path.append(dirname(__file__))
 from cloudmesh.bookmanagerservice.service.get_books import get_books
 from cloudmesh.bookmanagerservice.service.generateYAML import yamlGenerator
+from cloudmesh.common.util import path_expand
 
-# cloudmesh.bookmanagerservice import path
-
-# PATH IS DEFINED ELSEWHERE
-
-path= "/opt/project"
-#path= "."
+path = "."
 
 app = Flask(__name__)
 
-#add something that will make these directories if they do not exist 
-app.config['UPLOAD_FOLDER'] = f'{path}/bookmanager-service/dest/'
-app.config[
-    'BOOKS_FOLDER'] = f'{path}/bookmanager-service/dest/booksgenerated/'
+app.config['UPLOAD_FOLDER'] = path_expand(f'{path}/dest')
+app.config['BOOKS_FOLDER'] = path_expand(f'{path}/dest/booksgenerated')
+
+for entry  in ['BOOKS_FOLDER', 'UPLOAD_FOLDER']:
+    path = app.config[entry]
+    print(path)
+    Shell.mkdir(path)
+
+for path in ["./dest/download/epub", "./dest/download/yaml"]:
+    Shell.mkdir(path_expand(path))
+
+
 Misaka(app, fenced_code=True, highlight=True)
 bks = get_books(onlybooks=True)
 
@@ -68,7 +68,9 @@ def genyaml():
 
 @app.route("/download/<string:flname>")
 def download(flname):
-    return send_from_directory(directory=app.config['UPLOAD_FOLDER'],
+    folder = app.config['UPLOAD_FOLDER']
+    print (folder)
+    return send_from_directory(directory=f"{folder}/",
                                filename=flname, as_attachment=True,
                                attachment_filename="book.epub")
 
@@ -82,16 +84,16 @@ def receive_data():
     flnm, hex = yamlGenerator(bktit[0], data)
 
     # check if hex is in generated books in dest
-    gg = app.config['UPLOAD_FOLDER'] + hex + '.epub'
+    folder = app.config['UPLOAD_FOLDER']
+    gg = f"{folder}/{hex}.epub"
     if os.path.exists(gg):
         print("Found")
     else:
         print('File does not exist')
-        subprocess.run(
-            "bookmanager " + app.config['BOOKS_FOLDER'] + hex + '.yaml get',
-            shell=True)
-        st = "dest/" + flnm
-        ed = "dest/" + hex + ".epub"
+        folder = app.config['BOOKS_FOLDER']
+        subprocess.run(f"bookmanager {folder}/{hex}.yaml get", shell=True)
+        st = f"dest/{flnm}"
+        ed = f"dest/{hex}.epub"
         os.rename(st, ed)
 
     return render_template('linktobook.html', data=hex + ".epub")

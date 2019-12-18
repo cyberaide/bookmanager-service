@@ -53,9 +53,6 @@ setup:
 kill:
 	killall mongod
 
-mongo:
-	$(call terminal, $(MONGOD))
-
 source:
 	pip install -e .
 	cms help

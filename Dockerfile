@@ -47,31 +47,43 @@ WORKDIR /usr/src
 #
 # go to 3.8.0
 #
-RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
-RUN tar xzf Python-3.7.4.tgz
 
-WORKDIR /usr/src/Python-3.7.4
+#RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
+#RUN tar xzf Python-3.7.4.tgz
 
-RUN ./configure --enable-optimizations
+#WORKDIR /usr/src/Python-3.7.4
 
-RUN make altinstall
+#RUN ./configure --enable-optimizations
 
-RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 10
-RUN update-alternatives --config python
+#RUN make altinstall
 
-RUN update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.7 10
-RUN update-alternatives --config pip
+#RUN update-alternatives --install /usr/bin/python python /usr/local/bin/python3.7 10
+#RUN update-alternatives --config python
 
-RUN yes '' | update-alternatives --force --all
+#RUN update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.7 10
+#RUN update-alternatives --config pip
+
+#RUN yes '' | update-alternatives --force --all
 
 
-ENV PATH="/usr/local/bin:${PATH}"
+#ENV PATH="/usr/local/bin:${PATH}"
 
-RUN python3.7 --version
+#RUN python3.7 --version
+
+RUN apt install -y software-properties-common
+
+RUN add-apt-repository ppa:deadsnakes/ppa
+RUN apt-get -y update
+RUN apt-get -y install python3.8
+RUN apt-get -y install python3.8-distutils
+
+
 RUN python --version
 RUN pip install -U pip
 RUN pip --version
 
+
+# RUN python3.8 -m pip install --upgrade pip setuptools wheel
 
 
 WORKDIR /tmp

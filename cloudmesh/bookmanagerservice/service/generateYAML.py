@@ -7,7 +7,7 @@ import sys
 import re
 import hashlib
 from cloudmesh.bookmanagerservice.service.get_books import get_books
-
+from cloudmesh.common.util import path_expand
 #
 # This seems a BUG: pip install should take care of this so
 # we can do propper imports
@@ -78,7 +78,8 @@ def yamlGenerator(bookTitle, data):
 
     # return filenm
 
-    with open('dest/booksgenerated/' + str(hex_dig) + '.yaml', 'w+') as f:
+    path = path_expand(f'./dest/booksgenerated/{hex_dig}.yaml')
+    with open(path, 'w+') as f:
         f.write(mystr)
     return filenm, hex_dig
 

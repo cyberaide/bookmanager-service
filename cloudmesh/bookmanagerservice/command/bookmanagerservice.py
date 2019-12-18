@@ -3,33 +3,21 @@ from __future__ import print_function
 from cloudmesh.common.debug import VERBOSE
 from cloudmesh.shell.command import PluginCommand
 from cloudmesh.shell.command import command
+from pathlib import Path
+import subprocess
+import os
 
-"""
+# host = "0.0.0.0"
+
 host = "127.0.0.1"
-host = "0.0.0.0"
 port = "5000"
-path = /opt/project
-path = .
+path = "."
+image = "bookmanager-service:4.1.3"
 
-volume = "host" if left out or host just do loacl
-volume = "local" if true do volume 
+#volume = "host" if left out or host just do loacl
+#volume = "local" if true do volume
 
 
-def bmservice():
-    p = str(Path('.').absolute())
-    strt = f'docker run --rm -it -p {host}:{port}:{port}/tcp -w {path}/bookmanager-service '
-    envs = '-e "FLASK_APP={path}/cloudmesh/bookmanagerservice/service/app.py" -e "FLASK_ENV=development" ' # ????
-    vol = '-v ' + str(
-        Path(
-            '.').absolute()) + ':/opt/project/bookmanager-service bigdata:v1 '
-    pcmd = f'python -u -m flask run --host {host}'
-    final = strt + envs + vol + pcmd
-    print(final)
-    subprocess.run(final, shell=True)   # repace this with detached ? or use Shell.execute ?
-
-#if __name__ is "__main__":
-#    bmservice()
-"""
 
 class BookmanagerserviceCommand(PluginCommand):
 
@@ -38,10 +26,14 @@ class BookmanagerserviceCommand(PluginCommand):
     def do_bookmanagerservice(self, args, arguments):
         """
         ::
+
           Usage:
-                bookmanagerservice start
+                bookmanagerservice [-v] start [--dryrun]
                 bookmanagerservice stop
                 bookmanagerservice status
+                bookmanagerservice create image
+                bookmanagerservice shell
+                bookmanagerservice [-v] local [--dryrun]
 
           This command manages the bookmanager service.
 
@@ -63,8 +55,27 @@ class BookmanagerserviceCommand(PluginCommand):
 
 
         if arguments.start:
+
             print("Starts the service")
-            raise NotImplementedError
+
+            p = str(Path('.').absolute())
+            strt = f'docker run --rm -it -p {host}:{port}:{port}/tcp '
+            workdir =  f'-w /opt/project/bookmanager-service/bookmanager-service '
+            envs = f'-e "FLASK_APP={path}/cloudmesh/bookmanagerservice/service/app.py" -e "FLASK_ENV=development"'
+            host_path = str(Path('.').absolute())
+            vol = f'{host_path}:/opt/project/bookmanager-service {image} '
+            pcmd = f'python -u -m flask run --host {host}'
+            command = f"{strt} {workdir} {envs} -v {vol} {pcmd}"
+
+            if arguments["-v"] or arguments["--dryrun"]:
+                print(command)
+            if not arguments["--dryrun"]:
+                subprocess.run(command, shell=True)
+
+
+            # repace this with detached ? or use Shell.execute ?
+
+            return ""
 
         elif arguments.stop:
             print("Stops the service")
@@ -77,5 +88,27 @@ class BookmanagerserviceCommand(PluginCommand):
             raise NotImplementedError
 
             " just show waht ps gives us cloudmesh for t"
+
+        elif arguments.create and arguments.image:
+            # schould use subprocess ;-)
+            #
+            # creat subdir with Dockerfile in it and than run this command in that dir
+            #
+            os.system (f"docker build -t {image} .")
+
+        elif arguments.local:
+
+            print("Starts the service")
+
+            p = str(Path('.').absolute())
+            envs = f'FLASK_APP={path}/cloudmesh/bookmanagerservice/service/app.py FLASK_ENV=development'
+            pcmd = f'python -u -m flask run --host {host}'
+            command = f" {envs} {pcmd}"
+
+            if arguments["-v"] or arguments["--dryrun"]:
+                print(command)
+            if not arguments["--dryrun"]:
+                subprocess.run(command, shell=True)
+
 
         return ""
