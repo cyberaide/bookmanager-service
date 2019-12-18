@@ -11,8 +11,8 @@ import json
 # why can we not use pip instead of sys.path ....?????
 #
 # sys.path.append(dirname(__file__))
-from cloudmesh.bookmanagerservice.get_books import get_books
-from cloudmesh.bookmanagerservice.generateYAML import yamlGenerator
+from cloudmesh.bookmanagerservice.service.get_books import get_books
+from cloudmesh.bookmanagerservice.service.generateYAML import yamlGenerator
 
 # cloudmesh.bookmanagerservice import path
 
