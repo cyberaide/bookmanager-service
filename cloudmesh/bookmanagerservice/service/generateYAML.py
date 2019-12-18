@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 import re
 import hashlib
-from cloudmesh.bookmanagerservice.get_books import get_books
+from cloudmesh.bookmanagerservice.service.get_books import get_books
 
 #
 # This seems a BUG: pip install should take care of this so
@@ -73,12 +73,12 @@ def yamlGenerator(bookTitle, data):
 
     # print(mystr)
 
-    # with open('books/booksgenerated/nai_test.yaml', 'w+') as f:
+    # with open('dest/booksgenerated/nai_test.yaml', 'w+') as f:
     #     f.write(mystr)
 
     # return filenm
 
-    with open('books/booksgenerated/' + str(hex_dig) + '.yaml', 'w+') as f:
+    with open('dest/booksgenerated/' + str(hex_dig) + '.yaml', 'w+') as f:
         f.write(mystr)
     return filenm, hex_dig
 

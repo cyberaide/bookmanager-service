@@ -99,6 +99,12 @@ RUN git clone https://github.com/cyberaide/bookmanager-service.git
 WORKDIR /opt/project/bookmanager-service
 RUN pip install -e .
 
+ENV FLASK_APP=/opt/project/bookmanager-service/cloudmesh/bookmanagerservice/service/app.py
+ENV FLASK_ENV=development
+
+EXPOSE 5000
+
+
 WORKDIR /root
 
 

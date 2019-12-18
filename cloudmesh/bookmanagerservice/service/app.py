@@ -11,20 +11,22 @@ import json
 # why can we not use pip instead of sys.path ....?????
 #
 # sys.path.append(dirname(__file__))
-from cloudmesh.bookmanagerservice.get_books import get_books
-from cloudmesh.bookmanagerservice.generateYAML import yamlGenerator
+from cloudmesh.bookmanagerservice.service.get_books import get_books
+from cloudmesh.bookmanagerservice.service.generateYAML import yamlGenerator
 
 # cloudmesh.bookmanagerservice import path
 
 # PATH IS DEFINED ELSEWHERE
 
-path= "/opt/projects"
+path= "/opt/project"
 #path= "."
 
 app = Flask(__name__)
+
+#add something that will make these directories if they do not exist 
 app.config['UPLOAD_FOLDER'] = f'{path}/bookmanager-service/dest/'
 app.config[
-    'BOOKS_FOLDER'] = '{path}/bookmanager-service/dest/booksgenerated/'
+    'BOOKS_FOLDER'] = f'{path}/bookmanager-service/dest/booksgenerated/'
 Misaka(app, fenced_code=True, highlight=True)
 bks = get_books(onlybooks=True)
 
@@ -54,7 +56,7 @@ def manual():
 
 @app.route("/chapterselection/<string:book>")
 def chapterselection(book):
-    bkinfo = getdata.getBooks(onlybooks=False, filename=bks[book])
+    bkinfo = get_books(onlybooks=False, filename=bks[book])
     toc = bkinfo[book]
     return render_template("chapterselection2.html", files=[toc, str(book)])
 
