@@ -35,7 +35,6 @@ requests
 ruamel.yaml
 nested_lookup
 oyaml
-collections
 """.split("\n")
 
 # dependency_links = ['http://github.com/nicolaiarocci/eve.git@develop']

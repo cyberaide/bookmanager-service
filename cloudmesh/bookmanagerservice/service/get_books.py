@@ -68,7 +68,7 @@ def rec(dat, k=None, idx=None):
     return final
 
 
-def getBooks(onlybooks=False, filename=""):
+def get_books(onlybooks=False, filename=""):
     bks = {}
     if onlybooks:
         files = glob.glob("books/*.yaml")

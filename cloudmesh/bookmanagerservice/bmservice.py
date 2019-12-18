@@ -11,6 +11,7 @@ from pathlib import Path
 host = "127.0.0.1"
 host = "0.0.0.0"
 port = "5000"
+#  DONT CHANGE ITS IN THE CONTAINER path = "."
 
 def bmservice():
     p = str(Path('.').absolute())
@@ -24,5 +25,5 @@ def bmservice():
     subprocess.run(final, shell=True)
 
 
-if __name__ is "__main__":
+if __name__ == "__main__":
     bmservice()

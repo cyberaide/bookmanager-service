@@ -44,6 +44,9 @@ RUN apt-get install -y lsb-core
 
 WORKDIR /usr/src
 
+#
+# go to 3.8.0
+#
 RUN wget https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tgz
 RUN tar xzf Python-3.7.4.tgz
 
@@ -85,11 +88,15 @@ RUN tar xvf linux-pandoc_2_7_3.tar.gz
 
 RUN mv pandoc-crossref /usr/local/bin
 
-
+WORKDIR /opt
 
 RUN git clone https://github.com/cyberaide/bookmanager.git
+WORKDIR /opt/bookmanager
+RUN pip install -e .
 
-WORKDIR /tmp/bookmanager
+WORKDIR /opt/project
+RUN git clone https://github.com/cyberaide/bookmanager-service.git
+WORKDIR /opt/project/bookmanager-service
 RUN pip install -e .
 
 WORKDIR /root

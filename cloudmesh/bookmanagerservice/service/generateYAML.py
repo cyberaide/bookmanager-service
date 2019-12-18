@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import re
 import hashlib
+from cloudmesh.bookmanagerservice.get_books import get_books
 
 #
 # This seems a BUG: pip install should take care of this so
@@ -13,16 +14,16 @@ import hashlib
 #
 # from cloudmesh.bookmanagerservixe.service ....
 #
-p = Path('.') / 'cloudmesh' / 'bookmanagerservice' / 'service'
-sys.path.append(str(p.absolute()))
+# p = Path('.') / 'cloudmesh' / 'bookmanagerservice' / 'service'
+# sys.path.append(str(p.absolute()))
+
 from nested_lookup import get_all_keys
-import getdata
 
 
 def yamlGenerator(bookTitle, data):
-    bks = getdata.getBooks(onlybooks=True)
+    bks = get_books(onlybooks=True)
     tstbk = bookTitle.strip()
-    bkinfo = getdata.getBooks(onlybooks=False, filename=bks[tstbk])
+    bkinfo = get_books(onlybooks=False, filename=bks[tstbk])
 
     # All Data
     mainData = bkinfo[tstbk]['data']

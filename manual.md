@@ -1,8 +1,27 @@
-# Manual on how to get the Bookmanager Service to run
+# Book Manager Service Documentation
 
+Naimesh
+Gregor von Laszewski
+Kang
+Josiah
+
+# TODO: UPDATET THE BUMPVERSION
+
+
+## Rerequisits
+
+
+### Native Install
+
+GREGOR ADDS THE NATIVE WAY
+
+## Docker Install
+
+GREGOR FIXES THE DOCKER AND HAVE IT TESTED WITH NAIMESH
 
 ## Instructions to get the Docker Service Running
 
+GREGOR MAKES SUGGESTION ON HOW TO DO THE 
 
 1. First, make sure docker is installed and under settings confirm that
   the daemon on tcp box is checked
@@ -36,37 +55,32 @@
 
 5. Within Terminal/Powershell type the following commands: 
 
+    TOO DO: RENAME IMAGE TO bookmanager-service
+    
    ```bash 
    docker build -t bigdata:v1 .
+   ```
+   
+   The next lines are still done on the host system as we assume the 
+   file system is mounted as a volume into the container, so that the 
+   host sysme and the container has the same volume.
+
+
+   Gregor: please fix this to show how to do this from teh commandlin 
+   and than remove the volume mount documention.
+   
+   the new docker file has a completly isolated instalation, and we just 
+   need to fix the documentaion. this her is used for debugging
+    
+   ```
    pip install -e . 
    bookmanager-service
    ```
+   
+   
 
 6. Finally, navigate to <http://localhost:5000/> or the displayed link to
    make sure the service works
-
-## How to get Bookmanager to run with MkDocs
-
-The site files for bookmanager are within the project repository
-(gh-pages by default, but in ours they're located in ```site```).
-
-First perform the command of ```git-checkout``` on the main working
-branch (master) of the git repository where the source documentation is
-for your project, and then run the following command:
-
-```mkdocs gh-deploy```
-
-Now MkDocs will build the docs and use
-```ghp-import``` to commit to the ```gh-pages``` branch, then pushing
-the ```gh-pages``` branch out to GitHub.
-
-Use ```mkdocs gh-deploy --help``` to get more options for the
-```gh-deploy``` command.
-
-Note: You can't review the built site right as it's pushed out to
-GitHub. So you might want to verify made changes to the docs first
-through using the ```build``` or ```serve``` commands and then reviewing
-the built files perhaps locally.
 
 ## References: 
 

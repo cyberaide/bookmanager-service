@@ -5,4 +5,3 @@ requests
 ruamel.yaml
 nested_lookup
 oyaml
-collections
