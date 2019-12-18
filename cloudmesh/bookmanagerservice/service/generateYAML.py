@@ -6,7 +6,7 @@ from pathlib import Path
 import sys
 import re
 import hashlib
-from cloudmesh.bookmanagerservice.get_books import get_books
+from cloudmesh.bookmanagerservice.service.get_books import get_books
 
 #
 # This seems a BUG: pip install should take care of this so
