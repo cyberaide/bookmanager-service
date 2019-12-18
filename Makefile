@@ -27,12 +27,17 @@ define terminal
 endef
 endif
 
-list:
-	$(call banner, "TARGETS")
-	@grep '^[^#[:space:]].*:' Makefile
-
 doc:
 	cd paper; make
+
+requirements:
+	echo "cloudmesh-cloud" > tmp.txt
+	pip-compile setup.py
+	fgrep -v "# via" requirements.txt | fgrep -v "cloudmesh" >> tmp.txt
+	mv tmp.txt requirements.txt
+	git commit -m "update requirements" requirements.txt
+	git push
+
 
 view:
 	# opening bookmanager
