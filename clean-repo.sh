@@ -1,9 +1,10 @@
 gitclean()
 {
+    echo
+    echo "Remove $1"
+    echo
     git filter-branch --force --index-filter "git rm --cached --ignore-unmatch $1" --prune-empty --tag-name-filter cat -- --all
 }
-
-gitclean books/site/404.html
 
 gitclean books/site/404.html
 gitclean books/site/about/index.html
