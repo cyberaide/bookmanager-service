@@ -1,7 +1,11 @@
 # Cloud-based Online Bookmanager 
 
 This service provides a cloud-based online bookmanager for
-individualized learning material for big data and cloud computing
+individualized learning material managed via cyberaide bookmanager yaml files
+
+Cyeraide bookamanger code is available from 
+
+* <https://pypi.org/project/cyberaide-bookmanager/>
 
 ## Background
 

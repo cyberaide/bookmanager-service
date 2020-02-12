@@ -9,7 +9,7 @@ Gregor von Laszewski
 
 ### Native Install
 
-???
+??? see README.md
 
 ## Docker Install
 
@@ -82,7 +82,7 @@ not implemented
     
    ```
    pip install -e . 
-   bookmanager-service
+   make image; bookmanager-service
    ```
    
    
