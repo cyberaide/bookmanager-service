@@ -2,10 +2,6 @@
 
 Naimesh
 Gregor von Laszewski
-Kang
-Josiah
-
-# TODO: UPDATET THE BUMPVERSION
 
 
 ## Rerequisits
@@ -13,15 +9,15 @@ Josiah
 
 ### Native Install
 
-GREGOR ADDS THE NATIVE WAY
+???
 
 ## Docker Install
 
-GREGOR FIXES THE DOCKER AND HAVE IT TESTED WITH NAIMESH
+???
 
 ## Instructions to get the Docker Service Running
 
-GREGOR MAKES SUGGESTION ON HOW TO DO THE 
+???
 
 1. First, make sure docker is installed and under settings confirm that
   the daemon on tcp box is checked
@@ -42,7 +38,8 @@ GREGOR MAKES SUGGESTION ON HOW TO DO THE
    * <img src="https://docs.docker.com/v17.12/docker-for-mac/images/menu/d4m-menu-prefs-fileshare.png" alt="alt text" width="500" height="400">
   
 3. For Windows users, if you do not have Git you will need to install it 
-   from the following link: https://git-scm.com/download/win
+   from the following link: 
+   * <https://git-scm.com/download/win>
 4. Navigate to your preferred location for downloading and open the 
    Terminal/PowerShell in that directory
 5. Clone the bookmanager-service to your prefered location using **git** 
@@ -54,11 +51,9 @@ GREGOR MAKES SUGGESTION ON HOW TO DO THE
    ```
 
 5. Within Terminal/Powershell type the following commands: 
-
-    TOO DO: RENAME IMAGE TO bookmanager-service
     
    ```bash 
-   docker build -t bigdata:v1 .
+   docker build -t bookmanager-service:v1 .
    ```
    
    The next lines are still done on the host system as we assume the 
