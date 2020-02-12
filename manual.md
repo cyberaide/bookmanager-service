@@ -13,7 +13,17 @@ Gregor von Laszewski
 
 ## Docker Install
 
-???
+```
+make image
+```
+
+creates the image `bookmanager-service`
+
+start the container with port 5000
+
+not implemented
+
+
 
 ## Instructions to get the Docker Service Running
 
@@ -61,11 +71,14 @@ Gregor von Laszewski
    host sysme and the container has the same volume.
 
 
-   Gregor: please fix this to show how to do this from teh commandlin 
+   Gregor: please fix this to show how to do this from the commandlin 
    and than remove the volume mount documention.
    
    the new docker file has a completly isolated instalation, and we just 
    need to fix the documentaion. this her is used for debugging
+    
+    
+   This is the native install ... so this needs to go somewhere else: 
     
    ```
    pip install -e . 

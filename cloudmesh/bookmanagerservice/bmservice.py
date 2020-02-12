@@ -11,6 +11,7 @@ from pathlib import Path
 host = "127.0.0.1"
 host = "0.0.0.0"
 port = "5000"
+image = "bookmanager-service"
 #  DONT CHANGE ITS IN THE CONTAINER path = "."
 
 def bmservice():
@@ -18,7 +19,7 @@ def bmservice():
     strt = f'docker run --rm -it -p {host}:{port}:{port}/tcp -w /opt/project/bookmanager-service '
     envs = '-e "FLASK_APP=/opt/project/bookmanager-service/cloudmesh/bookmanagerservice/service/app.py" -e "FLASK_ENV=development" '
     vol = '-v ' + str(
-        Path('.').absolute()) + ':/opt/project/bookmanager-service bigdata:v1 '
+        Path('.').absolute()) + f':/opt/project/bookmanager-service {image}:v1 '
     pcmd = f'python -u -m flask run --host {host}'
     final = strt + envs + vol + pcmd
     print(final)

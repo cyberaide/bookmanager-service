@@ -39,37 +39,19 @@ requirements:
 	git push
 
 
+
+
+
+
 view:
 	# opening bookmanager
 	open -a skim docs/vonLaszewski-bookmanager.pdf
 
-setup:
-	# brew update
-	# brew install mongodb
-	# brew install jq
-	rm -rf ~/.cloudmesh/data/db
-	mkdir -p ~/.cloudmesh/data/db
 
-kill:
-	killall mongod
 
 source:
 	pip install -e .
 	cms help
-
-test:
-	$(call banner, "LIST SERVICE")
-	curl -s -i http://127.0.0.1:5000 
-	$(call banner, "LIST PROFILE")
-	@curl -s http://127.0.0.1:5000/profile  | jq
-	$(call banner, "LIST CLUSTER")
-	@curl -s http://127.0.0.1:5000/cluster  | jq
-	$(call banner, "LIST COMPUTER")
-	@curl -s http://127.0.0.1:5000/computer  | jq
-	$(call banner, "INSERT COMPUTER")
-	curl -d '{"name": "myCLuster",	"label": "c0","ip": "127.0.0.1","memoryGB": 16}' -H 'Content-Type: application/json'  http://127.0.0.1:5000/computer  
-	$(call banner, "LIST COMPUTER")
-	@curl -s http://127.0.0.1:5000/computer  | jq
 
 
 clean:
@@ -89,6 +71,37 @@ install:
 	cd ../common; pip install .
 	cd ../cmd5; pip install .
 	pip install .
+
+######################################################################
+# DOCKER
+######################################################################
+
+image:
+	docker build  -t bookmanager-service:1.0.0 -t bookmanager-service:latest .
+
+#
+# cm munts all parent directories into the container
+#
+cm:
+	docker run -v `pwd`/..:/cm -w /cm --rm -it cloudmesh/bookmanager:1.0.0  /bin/bash
+
+shell:
+	docker run --rm -it cloudmesh/bookmanager:1.0.0  /bin/bash
+
+cms:
+	docker run --rm -it cloudmesh/bookmanager:1.0.0
+
+dockerclean:
+	-docker kill $$(docker ps -q)
+	-docker rm $$(docker ps -a -q)
+	-docker rmi $$(docker images -q)
+
+push:
+	docker push cloudmesh/bookmanager:1.0.0
+	docker push cloudmesh/bookmanager:latest
+
+run:
+	docker run cloudmesh/bookmanager:1.0.0 /bin/sh -c "cd books/book/cloud; git pull; make"
 
 ######################################################################
 # PYPI
