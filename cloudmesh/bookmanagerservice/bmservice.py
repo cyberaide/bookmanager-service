@@ -8,8 +8,8 @@ from pathlib import Path
 # than we can use cms bookmanagerservice ....?
 #
 
-host = "127.0.0.1"
 host = "0.0.0.0"
+#host = "127.0.0.1"
 port = "5000"
 image = "bookmanager-service"
 #  DONT CHANGE ITS IN THE CONTAINER path = "."
