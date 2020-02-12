@@ -17,15 +17,24 @@ specific sections and change the order through a convenient tree view.
 
 ## Installation
 
-We assume you have docker installed: 
+We assume you have docker installed and use a Vvenv called BOOK:
 
 ```bash
+python3.8 -m venv ~/BOOK
+source ~/BOOK/bin/activate
+```
+
+In the activated vm do
+
+```bash
+cd ~
 mkdir cm
 cd cm
 pip install cyberaide-bookmanager
 https://github.com/cyberaide/bookmanager-service.git
 cd bookmanager-service
 make image
+pip install -e .
 bookmanager-service
 ```
 

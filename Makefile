@@ -79,6 +79,9 @@ install:
 image:
 	docker build  -t bookmanager-service:1.0.0 -t bookmanager-service:latest .
 
+run:
+	bookmanager-service
+
 #
 # cm munts all parent directories into the container
 #

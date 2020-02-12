@@ -15,11 +15,10 @@ image = "bookmanager-service"
 #  DONT CHANGE ITS IN THE CONTAINER path = "."
 
 def bmservice():
-    p = str(Path('.').absolute())
+    directory = str(Path('.').absolute())
     strt = f'docker run --rm -it -p {host}:{port}:{port}/tcp -w /opt/project/bookmanager-service '
     envs = '-e "FLASK_APP=/opt/project/bookmanager-service/cloudmesh/bookmanagerservice/service/app.py" -e "FLASK_ENV=development" '
-    vol = '-v ' + str(
-        Path('.').absolute()) + f':/opt/project/bookmanager-service {image}:v1 '
+    vol = f'-v {directory}:/opt/project/bookmanager-service {image}:v1 '
     pcmd = f'python -u -m flask run --host {host}'
     final = strt + envs + vol + pcmd
     print(final)
