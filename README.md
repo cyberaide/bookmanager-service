@@ -15,10 +15,9 @@ specific sections and change the order through a convenient tree view.
   
 ![Screenshot](images/screenshot-bookmanager-service.png)
 
-## Instalation
+## Installation
 
-We assume you have bookmanager installed (This requires also a very new
-version of pandoc and pandoc-crossref): 
+We assume you have docker installed: 
 
 ```bash
 mkdir cm
@@ -43,47 +42,6 @@ More instaltion instruction can be found in the [Manual](manual.md) (alpha)
 ## Container
 
 A container is available but we have not yet documented how to use it 
-
-## Bugs# bookmanager-service
-
-This service provides a cloud-based online bookmanager for
-individualized learning material managed via cyberaide bookmanager YAML files
-
-Cyeraide bookamanger code is available from 
-
-* <https://pypi.org/project/cyberaide-bookmanager/>
-
-Cyberaide bookmanager that can create books based on markdown files that
-are distributed online in GitHub. The table of content is managed
-through a YAML file. Cyberaide bookmanager-service can read these YAML
-files and present a graphical user interface that allows us to check on
-specific sections and change the order through a convenient tree view.
-  
-![Screenshot](images/screenshot-bookmanager-service.png)
-
-## Instalation
-
-We assume you have docker installed: 
-
-```bash
-mkdir cm
-cd cm
-pip install cyberaide-bookmanager
-https://github.com/cyberaide/bookmanager-service.git
-cd bookmanager-service
-make image
-bookmanager-service
-```
-
-In your web browser open 
-
-```
-localhost:5000
-```
-
-Make sure to close the container with CTRL-C once done.
-
-More instaltion instruction can be found in the [Manual](manual.md) (alpha)
 
 ## Adding new book tamplates
 
