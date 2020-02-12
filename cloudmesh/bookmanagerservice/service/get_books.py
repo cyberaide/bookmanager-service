@@ -97,10 +97,8 @@ def get_books(onlybooks=False, filename=""):
         title = dat['metadata']['title']
         title = " ".join(title.split("\n"))
         global fullLink
-        print ("PPPPPPP")
         pprint(dat)
         fullLink = dat['github']
-        print ("PPPPPPP")
         pprint(dat2)
         rec(dat2)
         pprint(dat2)
