@@ -53,10 +53,10 @@ you should be able to modify them in your local copy.
 
 ## Bugs
 
-* Selecting a chapter should automatically select the parents. This is not yet implemented.
-* REFERENCES must always bee checked on.
-* The container is not yet using mount or the host network.
-
+1. Selecting a chapter should automatically select the parents. This is not yet implemented.
+2. REFERENCES must always bee checked on.
+3. The container is not yet using mount or the host network.
+4. This has only ben tested on macOS
 
 ## Credit
 
@@ -68,12 +68,9 @@ information.
 
 Bookmanager command line tool links:
 
-* <https://pypi.org/project/cyberaide-bookmanager/>
-* <https://github.com/cyberaide/bookmanager>
-* <https://github.com/cyberaide/bookmanager/blob/master/README.md>
+1. <https://github.com/cyberaide/bookmanager-service>
+2. <https://pypi.org/project/cyberaide-bookmanager/>
+3. <https://github.com/cyberaide/bookmanager>
+4. <https://github.com/cyberaide/bookmanager/blob/master/README.md>
 
-
-* selection a chapter chould automatically select the parents. This is not yet implemented
-* REFERNCES must always bee checked on
-* The container is not yet using mount or the host network
 
