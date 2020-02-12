@@ -63,8 +63,7 @@ specific sections and change the order through a convenient tree view.
 
 ## Instalation
 
-We assume you have bookmanager installed (This requires also a very new
-version of pandoc and pandoc-crossref): 
+We assume you have bookmanager installed: 
 
 ```bash
 mkdir cm
