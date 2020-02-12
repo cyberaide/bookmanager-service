@@ -58,7 +58,6 @@ you should be able to modify them in your local copy.
 * The container is not yet using mount or the host network.
 
 
-
 ## Credit
 
 Nitesh and Gregor. Please contact Gregor von Laszewski for more
@@ -78,16 +77,3 @@ Bookmanager command line tool links:
 * REFERNCES must always bee checked on
 * The container is not yet using mount or the host network
 
-## Credit
-
-Nitesh and Gregor. Please contact Gregor von Laszewski for more
-information.
-
-
-## References
-
-Bookmanager command line tool links:
-
-* <https://pypi.org/project/cyberaide-bookmanager/>
-* <https://github.com/cyberaide/bookmanager>
-* <https://github.com/cyberaide/bookmanager/blob/master/README.md>
