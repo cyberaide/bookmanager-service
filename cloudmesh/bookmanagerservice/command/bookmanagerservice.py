@@ -1,11 +1,12 @@
 from __future__ import print_function
 
+import os
+import subprocess
+from pathlib import Path
+
 from cloudmesh.common.debug import VERBOSE
 from cloudmesh.shell.command import PluginCommand
 from cloudmesh.shell.command import command
-from pathlib import Path
-import subprocess
-import os
 
 # host = "0.0.0.0"
 
@@ -43,8 +44,6 @@ class BookmanagerserviceCommand(PluginCommand):
         """
         VERBOSE(arguments)
 
-        import subprocess
-        from pathlib import Path
 
         #
         # sshoudl that not be integrated into
