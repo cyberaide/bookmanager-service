@@ -63,7 +63,7 @@ specific sections and change the order through a convenient tree view.
 
 ## Instalation
 
-We assume you have bookmanager installed: 
+We assume you have docker installed: 
 
 ```bash
 mkdir cm
@@ -85,15 +85,21 @@ Make sure to close the container with CTRL-C once done.
 
 More instaltion instruction can be found in the [Manual](manual.md) (alpha)
 
-## Container
+## Adding new book tamplates
 
-A container is available, but we have not yet documented how to use it. 
+The book tamplates are in 
+
+`bookmanager-service/books`
+
+you should be able to modify them in your local copy.
 
 ## Bugs
 
 * Selecting a chapter should automatically select the parents. This is not yet implemented.
 * REFERENCES must always bee checked on.
 * The container is not yet using mount or the host network.
+
+
 
 ## Credit
 
