@@ -34,6 +34,7 @@ pip install cyberaide-bookmanager
 https://github.com/cyberaide/bookmanager-service.git
 cd bookmanager-service
 make image
+pip install -r requirements.txt
 pip install -e .
 bookmanager-service
 ```
