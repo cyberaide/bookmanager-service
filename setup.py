@@ -28,6 +28,7 @@ def readfile(filename):
 # add minimum requirements here
 #
 requiers = """
+psutil
 Flask
 Flask-Misaka
 PyYAML
