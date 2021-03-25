@@ -10,6 +10,6 @@ flask-misaka==1.0.0
 flask==1.1.1
 nested-lookup==0.2.19
 oyaml==0.9
-pyyaml==5.2
+pyyaml==5.4
 requests==2.22.0
 ruamel.yaml==0.16.5
